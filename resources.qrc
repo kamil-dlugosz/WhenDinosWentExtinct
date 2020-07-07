@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Textures/b0.png</file>
+        <file>Textures/b1.png</file>
+        <file>Textures/b2.png</file>
+        <file>Textures/b3.png</file>
+        <file>Textures/b4.png</file>
+        <file>Textures/b5.png</file>
+        <file>Textures/b6.png</file>
+        <file>Textures/e0.png</file>
+        <file>Textures/e1.png</file>
+        <file>Textures/e2.png</file>
+        <file>Textures/e3.png</file>
+        <file>Textures/e4.png</file>
+        <file>Textures/e5.png</file>
+        <file>Textures/e6.png</file>
+        <file>Textures/e7.png</file>
+    </qresource>
+</RCC>
