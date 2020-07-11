@@ -8,7 +8,30 @@ namespace WDWE::logic::entities
 AirDino::AirDino(WorldMap *world_map, Kind kind)
   : Dino(world_map, kind)
 {
-
+//  qDebug() << static_cast<int>(getSex());
+  QVector<Biome> allowed_biomes(5);
+  allowed_biomes[0] = Biome::SAND;
+  allowed_biomes[1] = Biome::SAVANNA;
+  allowed_biomes[2] = Biome::FOREST;
+  allowed_biomes[3] = Biome::STONE;
+  allowed_biomes[4] = Biome::WATER;
+  setAllowedBiomes(allowed_biomes);
+  int i = 0, max = 5;
+  while (true) {
+    setPosition(QPointF(QRandomGenerator::system()
+                        ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
+                        QRandomGenerator::system()
+                        ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
+    if (isPointReachable(getPosition()))
+      break;
+    if (i ++ > max)
+      killMe();
+  }
+  QVector<Kind> diet(3);
+  diet[0] = Kind::WATERDINO;
+  diet[1] = Kind::TREE;
+  diet[2] = Kind::BUSH;
+  setDiet(diet);
 }
 
 AirDino::~AirDino()
@@ -21,22 +44,24 @@ void AirDino::tick()
   Dino::tick();
 }
 
-Entity *AirDino::findFood()
+AliveEntity *AirDino::findFood()
 {
   return Dino::findFood();
 }
 
-Entity *AirDino::findMate()
+AliveEntity *AirDino::findMate()
 {
   AirDino *closest_mate = nullptr;
   float closest_mate_dist = getMaxViewDist();
-  for (int mate_index = 0; mate_index < worldMap()->entityNumber(); ++ mate_index) {
+  for (int mate_index = 0; mate_index < getWorldMap()->entityNumber(); ++ mate_index) {
     AirDino *potencial_mate =
-        dynamic_cast<AirDino*>(worldMap()->entityAt(mate_index));
+        dynamic_cast<AirDino*>(getWorldMap()->entityAt(mate_index));
     if (potencial_mate == nullptr ||
         potencial_mate == this ||
+        potencial_mate->isAlive() == false ||
         potencial_mate->getKind() != this->getKind() ||
-        potencial_mate->sex() == this->sex() ||
+        potencial_mate->getSex() == this->getSex() ||
+        potencial_mate->getMate() != nullptr ||
         potencial_mate->isReadyToMate() == false)
       continue;
     float current_distance
@@ -48,48 +73,50 @@ Entity *AirDino::findMate()
   return closest_mate;
 }
 
-void AirDino::eat()
+void AirDino::eat(AliveEntity *prey)
 {
-  Dino::eat();
+  Dino::eat(prey);
 }
 
 void AirDino::mating()
 {
-  if (getTarget() != nullptr) {
-    float distance = (getPosition() - getTarget()->getPosition()).manhattanLength();
+  if (getMate() != nullptr) {
+    float distance = (getPosition() - getMate()->getPosition()).manhattanLength();
     if (distance < getMinViewDist()) {
-      AirDino *mate = dynamic_cast<AirDino*>(getTarget());
+      AirDino *mate = dynamic_cast<AirDino*>(getMate());
       if (mate) {
         int children_number = QRandomGenerator::system()->bounded(1, 3);
         for (int i = 0; i < children_number; ++ i)
-          worldMap()->entityAdd(getKind());
+          getWorldMap()->entityAdd(getKind());
         mate->unpair();
         resetFertility();
         mate->resetFertility();
       }}}
 }
 
-void AirDino::pair(Entity *target)
+void AirDino::pair(AliveEntity *new_mate)
 {
-  if (target != nullptr) {
-    AirDino *mate = dynamic_cast<AirDino*>(target);
+  if (new_mate != nullptr) {
+    AirDino *mate = dynamic_cast<AirDino*>(new_mate);
     if (mate != nullptr){
-      mate->setTarget(this);
-      this->setTarget(mate);
+      mate->setMate(this);
+      this->setMate(mate);
     }}
 }
 
 void AirDino::unpair()
 {
-  AirDino *mate = dynamic_cast<AirDino*>(getTarget());
+  if (getMate() == nullptr)
+    return;
+  AirDino *mate = dynamic_cast<AirDino*>(getMate());
   if (mate != nullptr)
-    if (mate->getTarget() == this)
-      mate->setTarget(nullptr);
-  this->setTarget(nullptr);
+    if (mate->getMate() == this)
+      mate->setMate(nullptr);
+  this->setMate(nullptr);
 }
 
-bool AirDino::move()
+bool AirDino::move(QPointF destination)
 {
-  return Dino::move();
+  return Dino::move(destination);
 }
 }

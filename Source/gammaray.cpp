@@ -3,7 +3,7 @@
 namespace WDWE::logic::disasters
 {
 GammaRay::GammaRay(WorldMap *world_map)
-  : Disaster(world_map)
+  : Disaster(world_map, Type::GAMMARAY)
 {
 
 }

@@ -8,7 +8,7 @@ namespace WDWE::logic::entities
 class AirDino : public Dino
 {
 public:
-  AirDino(WorldMap *world_map, Kind getKind = Kind::AIRDINO);
+  AirDino(WorldMap *world_map, Kind kind = Kind::AIRDINO);
   ~AirDino();
   void tick() override;
 
@@ -17,13 +17,13 @@ private:
   int wing_stamina_;
   int flying_speed_;
 
-  Entity *findFood() override;
-  Entity *findMate() override;
-  void eat() override;
+  AliveEntity *findFood() override;
+  AliveEntity *findMate() override;
+  void eat(AliveEntity *prey) override;
   void mating() override;
-  void pair(Entity *target) override;
+  void pair(AliveEntity *new_mate) override;
   void unpair() override;
-  bool move() override;
+  bool move(QPointF destination) override;
 };
 }
 #endif // AIRDINO_H

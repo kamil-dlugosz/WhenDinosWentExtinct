@@ -3,7 +3,7 @@
 namespace WDWE::logic::disasters
 {
 Drought::Drought(WorldMap *world_map)
-  : Disaster(world_map)
+  : Disaster(world_map, Type::DROUGHT)
 {
 
 }

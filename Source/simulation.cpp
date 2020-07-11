@@ -1,22 +1,26 @@
 #include <QDebug>
 #include "simulation.h"
-#include "include-kinds.h"
+#include "include-entities.h"
+#include "include-disasters.h"
 
 namespace WDWE::logic
 {
 Simulation::Simulation()
+  : timer_(new QTimer(this))
+  , disaster_(nullptr)
+  , world_map_(createWorld())
+  , default_interval_(1000.0/60.0)
+  , interval_(default_interval_)
 {
-  world_map_ = createWorld();
-  timer_ = new QTimer(this);
   connect(timer_, SIGNAL(timeout()), this, SLOT(tick()));
   timer_->start(interval_);
-  for (int i = 0; i < 2; ++ i)
-    world_map_->entityAdd(entities::Kind::AIRDINO);
   for (int i = 0; i < 0; ++ i)
+    world_map_->entityAdd(entities::Kind::AIRDINO);
+  for (int i = 0; i < 1; ++ i)
     world_map_->entityAdd(entities::Kind::LANDDINO);
   for (int i = 0; i < 0; ++ i)
     world_map_->entityAdd(entities::Kind::WATERDINO);
-  for (int i = 0; i < 0; ++ i)
+  for (int i = 0; i < 10; ++ i)
     world_map_->entityAdd(entities::Kind::ALGA);
   for (int i = 0; i < 0; ++ i)
     world_map_->entityAdd(entities::Kind::BUSH);
@@ -31,30 +35,85 @@ Simulation::~Simulation()
   delete world_map_;
 }
 
-bool Simulation::entityAdd(entities::Entity *entity)
+void Simulation::simPause()
 {
-  return world_map_->entityAdd(entity);
+  timer_->stop();
 }
+
+void Simulation::simStart()
+{
+  timer_->start();
+}
+
+void Simulation::simFaster()
+{
+  interval_ /= 2;
+  timer_->setInterval(interval_);
+}
+
+void Simulation::simSlower()
+{
+  interval_ *= 2;
+  timer_->setInterval(interval_);
+}
+
+void Simulation::simResetSpeed()
+{
+  timer_->setInterval(default_interval_);
+}
+
+//bool Simulation::entityAdd(entities::AliveEntity *entity)
+//{
+//  return world_map_->entityAdd(entity);
+//}
 
 bool Simulation::entityAdd(entities::Kind kind)
 {
   return world_map_->entityAdd(kind);
 }
 
-bool Simulation::entityErase(int index)
+bool Simulation::startDisaster(disasters::Type type)
 {
-  return world_map_->entityErase(index);
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
+  }
+  switch (type) {
+  case disasters::Type::INFERNO:
+    disaster_ = new disasters::Inferno(world_map_);
+    break;
+  case disasters::Type::METEOR:
+    disaster_ = new disasters::Meteor(world_map_);
+    break;
+  case disasters::Type::GAMMARAY:
+    disaster_ = new disasters::GammaRay(world_map_);
+    break;
+  case disasters::Type::DROUGHT:
+    disaster_ = new disasters::Drought(world_map_);
+    break;
+  case disasters::Type::ANIHILATION:
+    disaster_ = new disasters::Anihilation(world_map_);
+    break;
+  default:
+    return false;
+  }
+  return true;
 }
 
-bool Simulation::entityErase(entities::Entity *entity)
-{
-  return world_map_->entityErase(entity);
-}
+//bool Simulation::entityErase(int index)
+//{
+//  return world_map_->entityErase(index);
+//}
 
-int Simulation::eatMeAt(int index)
-{
-  return world_map_->eatMeAt(index);
-}
+//bool Simulation::entityErase(entities::AliveEntity *entity)
+//{
+//  return world_map_->entityErase(entity);
+//}
+
+//int Simulation::eatMeAt(int index)
+//{
+//  return world_map_->eatMeAt(index);
+//}
 
 entities::Kind Simulation::kindAt(int index) const
 {
@@ -73,13 +132,20 @@ int Simulation::entityNumber() const
 
 Biome Simulation::biomeAt(int x, int y) const
 {
-  return world_map_->biomeAt(x, y);
+  return world_map_->biomeAtPixel(x, y);
 }
 
-bool Simulation::biomeChange(Biome biome, int x, int y)
+bool Simulation::getDisasterType() const
 {
-  return world_map_->biomeChange(biome, x, y);
+  if (disaster_ == nullptr)
+    return disasters::Type::INVALID;
+  return disaster_->getType();
 }
+
+//bool Simulation::biomeChange(Biome biome, int x, int y)
+//{
+//  return world_map_->biomeChange(biome, x, y);
+//}
 
 int Simulation::pixelWidth() const
 {
@@ -109,5 +175,13 @@ WorldMap *Simulation::createWorld()
 void Simulation::tick()
 {
   world_map_->tick();
+  if (disaster_ != nullptr) {
+    if (disaster_->hasEnded()) {
+      delete disaster_;
+      disaster_ = nullptr;
+    }
+    else
+      disaster_->tick();
+  }
 }
 }

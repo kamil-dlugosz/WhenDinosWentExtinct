@@ -9,16 +9,19 @@ namespace WDWE::logic::disasters
 class Inferno : public Disaster
 {
 public:
-  Inferno(WorldMap *world_map);
+  Inferno(WorldMap *world_map, Type type = Type::INFERNO);
   virtual ~Inferno();
   void tick() override;
 
 protected:
-  QPointF center_;
-  int spread_pace_;
-
+  QPointF getCenter();
+  int getSpreadPace();
   void destroySoil();
   void spreadFire();
+
+private:
+  QPointF center_;
+  int spread_pace_;
 };
 }
 #endif // INFERNO_H

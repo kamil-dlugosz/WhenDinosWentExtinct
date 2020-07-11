@@ -51,7 +51,8 @@ HEADERS += \
     enum-kind.h \
     gammaray.h \
     grass.h \
-    include-kinds.h \
+    include-disasters.h \
+    include-entities.h \
     inferno.h \
     landdino.h \
     mainwindow.h \

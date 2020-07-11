@@ -5,7 +5,7 @@
 
 namespace WDWE::logic::entities
 {
-class Dino : public Entity
+class Dino : public AliveEntity
 {
 public:
   enum class Sex {
@@ -16,47 +16,43 @@ public:
   virtual ~Dino();
   virtual void tick() override;
   int eatMe() override;
-  Entity *getTarget() const;
-  void setTarget(Entity *new_target);
+  Dino *getMate() const;
+  void setMate(Dino *new_mate);
   virtual bool isReadyToMate();
-  bool isFertile();
-  void resetFertility();
 
 protected:
+  void setDiet(QVector<Kind> new_diet);
+  QVector<Kind> getDiet();
+
   bool isHungry() const;
   bool isFed() const;
-  bool isAdult() const;
   bool isYummy(Kind food) const;
 
+  int getHghSaturation() const;
+  int getLowSaturation() const;
   int getMinViewDist() const;
   int getMaxViewDist() const;
-  Sex sex() const;
+  Sex getSex() const;
 
-  virtual Entity *findFood();
-  virtual Entity *findMate() = 0;
-  virtual void eat();
+  virtual AliveEntity *findFood();
+  virtual AliveEntity *findMate() = 0;
+  virtual void eat(AliveEntity *prey);
   virtual void mating() = 0;
-  virtual void pair(Entity *target) = 0;
+  virtual void pair(AliveEntity *target) = 0;
   virtual void unpair();
-  virtual bool move();
+  virtual bool move(QPointF destination);
 
 private:
-  const int max_saturation_;
   const int hgh_saturation_;
   const int low_saturation_;
   const int min_view_dist_;
   const int max_view_dist_;
-  const int max_fertility_;
   //const int max_speed_;
-  const float max_age_;
   const Sex sex_;
-  const Kind diet_;
+  QVector<Kind> diet_;
 
-  int satutation_;
-  int fertility_;
   int speed_;
-  float age_;
-  Entity *target_;
+  Dino *mate_;
 };
 }
 #endif // DINO_H

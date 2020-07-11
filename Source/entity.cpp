@@ -5,57 +5,143 @@
 
 namespace WDWE::logic::entities
 {
-Entity::Entity(WorldMap *world_map, Kind kind)
+AliveEntity::AliveEntity(WorldMap *world_map, Kind kind)
   : world_map_(world_map)
-  , position_(QPointF(QRandomGenerator::system()
-                      ->bounded(quint32(0), quint32(world_map_->pixelWidth())),
-                      QRandomGenerator::system()
-                      ->bounded(quint32(0), quint32(world_map_->pixelHeight()))))
   , kind_(kind)
+  , max_age_(7000)
+  , max_fertility_(400)
+  , max_saturation_(4000)
+  , age_(0)
+  , fertility_(0)
+  , saturation_(3500)
+  , position_(QPoint(0 ,0))
   , is_alive_(true)
 {
-  // czasami się wygeneruje kilka w jednym miejscu
-//  position_.rx() *= world_map_->pixelWidth() / world_map_->tileWidth();
-//  position_.ry() *= world_map_->pixelHeight() / world_map_->tileHeight();
+
 }
 
-Entity::~Entity()
+AliveEntity::~AliveEntity()
 {
 
 }
 
-void Entity::tick()
+void AliveEntity::tick()
 {
 
 }
 
-Kind Entity::getKind() const
+Kind AliveEntity::getKind() const
 {
   return kind_;
 }
 
-QPointF Entity::getPosition() const
+QPointF AliveEntity::getPosition() const
 {
   return position_;
 }
 
-bool Entity::isAlive() const
+int AliveEntity::getAge() const
+{
+  return age_;
+}
+
+int AliveEntity::getFertility() const
+{
+  return fertility_;
+}
+
+bool AliveEntity::isAlive() const
 {
   return is_alive_;
 }
 
-WorldMap *Entity::worldMap() const
+bool AliveEntity::isFertile()
+{
+  return (fertility_ >= max_fertility_);
+}
+
+bool AliveEntity::incFertility(int value)
+{
+  if (!isAdult())
+    return false;
+  fertility_ += value;
+  return true;;
+}
+
+void AliveEntity::incSaturation(int value)
+{
+  saturation_ += value;
+  if (saturation_ > max_saturation_)
+    saturation_ = max_saturation_;
+}
+
+bool AliveEntity::incAge(int value)
+{
+  age_ += value;
+  if (getAge() > getMaxAge()) {
+    killMe();
+    return false;
+  }
+  return true;
+}
+
+void AliveEntity::resetFertility()
+{
+  fertility_ = 0;
+}
+
+void AliveEntity::setSaturation(int value)
+{
+  saturation_ = value;
+}
+
+WorldMap *AliveEntity::getWorldMap() const
 {
   return world_map_;
 }
 
-void Entity::setPosition(QPointF position)
+void AliveEntity::setPosition(QPointF position)
 {
   position_ = position;
 }
 
-void Entity::killMe()
+void AliveEntity::killMe()
 {
   is_alive_ = false;
+}
+
+void AliveEntity::setAllowedBiomes(QVector<Biome> new_biomes)
+{
+  allowed_biomes_ = new_biomes;
+}
+
+QVector<Biome> AliveEntity::getAllowedBiomes()
+{
+  return allowed_biomes_;
+}
+
+bool AliveEntity::isPointReachable(QPointF point)
+{
+  return allowed_biomes_.contains(getWorldMap()->biomeAtPixel(point));
+}
+
+bool AliveEntity::isAdult() const
+{
+  return (age_ > 0.3 * max_age_ && age_ < 0.7 * max_age_);
+}
+
+int AliveEntity::getMaxAge() const
+{
+  return max_age_;
+}
+
+int AliveEntity::getSaturation() const
+{
+  return saturation_;
+}
+
+int AliveEntity::getMaxSaturation() const
+{
+  return max_saturation_;
 }
 }

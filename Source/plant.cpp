@@ -4,7 +4,10 @@
 namespace WDWE::logic::entities
 {
 Plant::Plant(WorldMap *world_map, Kind kind)
-  : Entity(world_map, kind)
+  : AliveEntity(world_map, kind)
+  , spread_rate_(1)
+  , growth_rate_(5)
+  , seed_number_(3)
 {
 
 }
@@ -23,5 +26,20 @@ int Plant::eatMe()
 {
   killMe();
   return 3000;
+}
+
+int Plant::getSpreadRate() const
+{
+  return spread_rate_;
+}
+
+int Plant::getGrowthRate() const
+{
+  return growth_rate_;
+}
+
+int Plant::getSeedNumber() const
+{
+  return seed_number_;
 }
 }

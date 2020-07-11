@@ -19,15 +19,21 @@ enum Type {
 class Disaster
 {  
 public:
-  Disaster(WorldMap *world_map);
+  Disaster(WorldMap *world_map, Type type);
   virtual ~Disaster();
-  virtual void tick() = 0;
-  Type type() { return type_; };
+  virtual void tick();
+  Type getType() const;
+  bool hasEnded() const;
 
 protected:
-  WorldMap *world_map_;
-  Type type_;
-  int duration_total_;
+  WorldMap *getWorldMap() const;
+  int getDurationTotal() const;
+  int getDurationLeft() const;
+
+private:
+  WorldMap *const world_map_;
+  const Type type_;
+  const int duration_total_;
   int duration_left_;
 };
 }

@@ -20,12 +20,23 @@ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
 
+private slots:
+  void on_actionSimulation_Pause_toggled(bool arg1);
+
+  void on_actionSimulation_Reset_Speed_triggered();
+
+  void on_actionSimulation_Slower_triggered();
+
+  void on_actionSimulation_Faster_triggered();
+
+  void on_actionStart_New_Disaster_triggered();
+
 private:
   Ui::MainWindow *ui;
   logic::Simulation *sim_;
   Resources *res_;
   QTimer *timer_;
-  float interval_ = 1000.0/60.0;
+  float interval_ = 1000.0/30.0;
 //  QPixmap *background_;
 //  QPixmap *foreground;
 

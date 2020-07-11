@@ -17,7 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
   connect(timer_, SIGNAL(timeout()), this, SLOT(repaint()));
   timer_->start(interval_);
 
-  this->resize(sim_->pixelWidth(), sim_->pixelHeight());
+  this->resize(sim_->pixelWidth(), sim_->pixelHeight()
+               + ui->toolBar->height()
+               + ui->statusbar->height());
   //  this->showFullScreen();
 }
 
@@ -52,4 +54,34 @@ void MainWindow::drawAlignToCenter(QPainter *pen, logic::entities::Kind kind,
   QPointF offset = QPointF(texture.width()/2, texture.height()/2);
   pen->drawPixmap(center - offset, texture);
 }
+}
+
+void WDWE::gui::MainWindow::on_actionSimulation_Pause_toggled(bool arg1)
+{
+  if(arg1)
+    sim_->simPause();
+  else
+    sim_->simStart();
+}
+
+void WDWE::gui::MainWindow::on_actionSimulation_Reset_Speed_triggered()
+{
+  sim_->simResetSpeed();
+}
+
+void WDWE::gui::MainWindow::on_actionSimulation_Slower_triggered()
+{
+  sim_->simSlower();
+}
+
+void WDWE::gui::MainWindow::on_actionSimulation_Faster_triggered()
+{
+  sim_->simFaster();
+}
+
+void WDWE::gui::MainWindow::on_actionStart_New_Disaster_triggered()
+{
+  sim_->simPause();
+  sim_->startDisaster(logic::disasters::Type::METEOR);
+  sim_->simStart();
 }

@@ -7,100 +7,99 @@
 namespace WDWE::logic::entities
 {
 Dino::Dino(WorldMap *world_map, Kind kind)
-  : Entity(world_map, kind)
-  , max_saturation_ (4000)
-  , hgh_saturation_ (3000)
-  , low_saturation_ (2000)
-  , min_view_dist_ (5)
-  , max_view_dist_ (6000)
-  , max_fertility_(40)
-  , max_age_ (15000)
-  , sex_ ((int)getPosition().x() % 2 == 0 ? Sex::FEMALE : Sex::MALE)
-  , diet_ (Kind::GRASS)
-  , satutation_ (1750)
-  , fertility_ (0)
-  , speed_ (60)
-  , age_ (0)
-  , target_ (nullptr)
+  : AliveEntity(world_map, kind)
+  , hgh_saturation_(3000)
+  , low_saturation_(2000)
+  , min_view_dist_(5)
+  , max_view_dist_(1000)
+  , sex_(QRandomGenerator::system()
+         ->bounded(2) == 0 ? Sex::FEMALE : Sex::MALE)
+  , speed_(60)
+  , mate_(nullptr)
 {
 
 }
 
 Dino::~Dino()
 {
-  unpair();
+  //  unpair();
 }
 
 void Dino::tick()
 {
-  if (age_ >= max_age_ || satutation_ <= 0 || !isAlive()) {
+  if (getAge() >= getMaxAge() || getSaturation() <= 0 || !isAlive()) {
     killMe();
     return;
   }
-  if (isHungry()) {
-    unpair();
-    setTarget(findFood());
-  }
-  else if (getTarget() == nullptr && isAdult()) {
-    fertility_ += QRandomGenerator::system()->bounded(5);
-    if (isFertile()) {
+  if (isReadyToMate()) {
+    if (getMate() == nullptr)
       pair(findMate());
-    }
+    if (getMate() != nullptr) {
+      move(mate_->getPosition());
+      mating();
+    }}
+  else if (isHungry()) {
+    AliveEntity *prey = nullptr;
+    prey = findFood();
+    if (prey != nullptr)
+      eat(prey);
+    if (prey != nullptr)
+      move(prey->getPosition());
   }
-  eat();
-  mating();
-  move();
-  age_ += 1;
-  satutation_ -= QRandomGenerator::system()->bounded(5);
+  incAge();
+  incFertility(QRandomGenerator::system()->bounded(5));
+  incSaturation(-QRandomGenerator::system()->bounded(5));
 }
 
 int Dino::eatMe()
 {
   killMe();
-  return 0;
+  return 3000;
 }
 
-Entity *Dino::getTarget() const
+Dino *Dino::getMate() const
 {
-  return target_;
+  return mate_;
 }
 
 bool Dino::isReadyToMate()
 {
-  if (isAlive() && isFed() && isFertile() && isAdult() && getTarget() == nullptr)
-    return true;
-  else
-    return false;
+  return (isFed() && isFertile() && isAdult());
 }
 
-bool Dino::isFertile()
+void Dino::setDiet(QVector<Kind> new_diet)
 {
-  return (fertility_ >= max_fertility_);
+  diet_ = new_diet;
 }
 
-void Dino::resetFertility()
+QVector<Kind> Dino::getDiet()
 {
-  fertility_ = 0;
+  return diet_;
 }
 
 bool Dino::isHungry() const
 {
-  return (satutation_ < hgh_saturation_);
+  return (getSaturation() < getHghSaturation());
 }
 
 bool Dino::isFed() const
 {
-  return (satutation_ > low_saturation_);
-}
-
-bool Dino::isAdult() const
-{
-  return (age_ > 0.1 * max_age_ && age_ < 0.7 * max_age_);
+  return (getSaturation() > getLowSaturation());
 }
 
 bool Dino::isYummy(Kind food) const
 {
-  return food == diet_;
+  return diet_.contains(food);
+}
+
+int Dino::getHghSaturation() const
+{
+  return hgh_saturation_;
+}
+
+int Dino::getLowSaturation() const
+{
+  return low_saturation_;
 }
 
 int Dino::getMinViewDist() const
@@ -113,37 +112,36 @@ int Dino::getMaxViewDist() const
   return max_view_dist_;
 }
 
-void Dino::setTarget(Entity *new_target)
+void Dino::setMate(Dino *new_mate)
 {
-  target_ = new_target;
+  mate_ = new_mate;
 }
 
-Entity *Dino::findFood()
+AliveEntity *Dino::findFood()
 {
-  Entity *closest_food = nullptr;
+  AliveEntity *closest_food = nullptr;
   float closest_food_dist = getMaxViewDist();
-  for (int food_index = 0; food_index < worldMap()->entityNumber(); ++ food_index) {
-    if (worldMap()->entityAt(food_index) == this ||
-        !isYummy(worldMap()->kindAt(food_index)))
+  for (int food_index = 0; food_index < getWorldMap()->entityNumber(); ++ food_index) {
+    if (getWorldMap()->entityAt(food_index) == this ||
+        !isYummy(getWorldMap()->kindAt(food_index)) ||
+        !isPointReachable(getWorldMap()->positionAt(food_index)))
       continue;
     float current_distance
-        = (worldMap()->positionAt(food_index) - getPosition()).manhattanLength();
+        = (getWorldMap()->positionAt(food_index) - getPosition()).manhattanLength();
     if (current_distance < closest_food_dist) {
       closest_food_dist = current_distance;
-      closest_food = worldMap()->entityAt(food_index);
+      closest_food = getWorldMap()->entityAt(food_index);
     }}
   return closest_food;
 }
 
-void Dino::eat()
+void Dino::eat(AliveEntity *prey)
 {
-  if (getTarget() != nullptr) {
-    float distance = (getPosition() - getTarget()->getPosition()).manhattanLength();
-    if (distance < getMinViewDist() && getTarget()->getKind() != getKind()) {
-      satutation_ += getTarget()->eatMe();
-      setTarget(nullptr);
-      if (satutation_ > max_saturation_)
-        satutation_ = max_saturation_;
+  if (prey != nullptr) {
+    float distance = (getPosition() - prey->getPosition()).manhattanLength();
+    if (distance < getMinViewDist() && prey->getKind() != getKind()) {
+      incSaturation(prey->eatMe());
+      prey = nullptr;
     }}
 }
 
@@ -161,22 +159,19 @@ void Dino::unpair()
 //  return true;
 //}
 
-bool Dino::move()
+bool Dino::move(QPointF destination)
 {
-  if (target_ == nullptr)
-    return false;
-  QPointF new_position;
   QPointF offset;
-  offset = target_->getPosition() - this->getPosition();
+  offset = destination - this->getPosition();
   float dist = qSqrt(offset.x()*offset.x() + offset.y()*offset.y());
   offset.rx() *= speed_ / 100.0 / dist;
   offset.ry() *= speed_ / 100.0 / dist;
-  new_position = getPosition() += offset;
-  setPosition(new_position);
+  destination = getPosition() += offset;
+  setPosition(destination);
   return true;
 }
 
-Dino::Sex Dino::sex() const
+Dino::Sex Dino::getSex() const
 {
   return sex_;
 }

@@ -8,7 +8,7 @@ namespace WDWE::logic::entities
 class WaterDino : public Dino
 {
 public:
-  WaterDino(WorldMap *world_map, Kind getKind = Kind::WATERDINO);
+  WaterDino(WorldMap *world_map, Kind kind = Kind::WATERDINO);
   ~WaterDino();
   void tick() override;
 
@@ -16,13 +16,13 @@ private:
   int max_oxygen_;
   int oxygen_;
 
-  Entity *findFood() override;
-  Entity *findMate() override;
-  void eat() override;
+  AliveEntity *findFood() override;
+  AliveEntity *findMate() override;
+  void eat(AliveEntity *prey) override;
   void mating() override;
-  void pair(Entity *target) override;
+  void pair(AliveEntity *new_mate) override;
   void unpair() override;
-  bool move() override;
+  bool move(QPointF destination) override;
   void takeABreath();
 };
 }
