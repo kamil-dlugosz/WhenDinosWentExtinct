@@ -6,8 +6,8 @@
 
 namespace WDWE::logic::entities
 {
-Dino::Dino(WorldMap *world_map, Kind kind)
-  : AliveEntity(world_map, kind)
+Dino::Dino(WorldMap *world_map, QPointF position, Kind kind)
+  : AliveEntity(world_map, kind, position)
   , hgh_saturation_(3000)
   , low_saturation_(2000)
   , min_view_dist_(5)
@@ -27,8 +27,7 @@ Dino::~Dino()
 
 void Dino::tick()
 {
-  if (getAge() >= getMaxAge() || getSaturation() <= 0 || !isAlive()) {
-    killMe();
+  if (!isAlive()) {
     return;
   }
   if (isReadyToMate()) {
@@ -45,6 +44,13 @@ void Dino::tick()
       eat(prey);
     if (prey != nullptr)
       move(prey->getPosition());
+  }
+  if (!isInGoodBiome(getPosition()) || isStarving()) {
+    incHealth(-1);
+  }
+  else if (isInGoodBiome(getPosition()) && isFed()) {
+    incHealth();
+    incSaturation(-QRandomGenerator::system()->bounded(5));
   }
   incAge();
   incFertility(QRandomGenerator::system()->bounded(5));
@@ -75,6 +81,11 @@ void Dino::setDiet(QVector<Kind> new_diet)
 QVector<Kind> Dino::getDiet()
 {
   return diet_;
+}
+
+bool Dino::isStarving() const
+{
+  return getSaturation() < 0;
 }
 
 bool Dino::isHungry() const
@@ -124,7 +135,7 @@ AliveEntity *Dino::findFood()
   for (int food_index = 0; food_index < getWorldMap()->entityNumber(); ++ food_index) {
     if (getWorldMap()->entityAt(food_index) == this ||
         !isYummy(getWorldMap()->kindAt(food_index)) ||
-        !isPointReachable(getWorldMap()->positionAt(food_index)))
+        !isInGoodBiome(getWorldMap()->positionAt(food_index)))
       continue;
     float current_distance
         = (getWorldMap()->positionAt(food_index) - getPosition()).manhattanLength();

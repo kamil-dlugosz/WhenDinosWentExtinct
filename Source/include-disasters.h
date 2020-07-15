@@ -5,6 +5,6 @@
 #include "meteor.h"
 #include "gammaray.h"
 #include "drought.h"
-#include "anihilation.h"
+#include "annihilation.h"
 
 #endif // INCLUDEDISASTERS_H

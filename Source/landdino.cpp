@@ -4,8 +4,8 @@
 
 namespace WDWE::logic::entities
 {
-LandDino::LandDino(WorldMap *world_map, Kind kind)
-  : Dino(world_map, kind)
+LandDino::LandDino(WorldMap *world_map, QPointF position, Kind kind)
+  : Dino(world_map, position, kind)
 {
   QVector<Biome> allowed_biomes(4);
   allowed_biomes[0] = Biome::SAND;
@@ -18,7 +18,7 @@ LandDino::LandDino(WorldMap *world_map, Kind kind)
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
                         QRandomGenerator::system()
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
-    if (isPointReachable(getPosition()))
+    if (isInGoodBiome(getPosition()))
       break;
     if (i ++ > max)
       killMe();

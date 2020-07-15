@@ -15,5 +15,6 @@
         <file>Textures/e5.png</file>
         <file>Textures/e6.png</file>
         <file>Textures/e7.png</file>
+        <file>Textures/disaster-dialog.jpg</file>
     </qresource>
 </RCC>

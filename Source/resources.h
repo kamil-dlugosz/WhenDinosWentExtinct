@@ -11,12 +11,14 @@ class Resources
 {
 public:
   Resources();
-  ~Resources();
-  QPixmap *entityTexture(logic::entities::Kind kind) const;
-  QPixmap *biomeTexture(logic::Biome biome) const;
+  virtual ~Resources();
+  QPixmap entityTexture(logic::entities::Kind kind) const;
+  QPixmap biomeTexture(logic::Biome biome) const;
+  QPixmap disasterDialogTexture() const;
 private:
   QPixmap **entity_textures_;
   QPixmap **biome_textures_;
+  QPixmap *disaster_dialog_;
 };
 }
 #endif // RESOURCES_H

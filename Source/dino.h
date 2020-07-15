@@ -12,7 +12,7 @@ public:
     MALE,
     FEMALE
   };
-  Dino(WorldMap *world_map, Kind getKind);
+  Dino(WorldMap *world_map, QPointF position, Kind getKind);
   virtual ~Dino();
   virtual void tick() override;
   int eatMe() override;
@@ -24,6 +24,7 @@ protected:
   void setDiet(QVector<Kind> new_diet);
   QVector<Kind> getDiet();
 
+  bool isStarving() const;
   bool isHungry() const;
   bool isFed() const;
   bool isYummy(Kind food) const;
@@ -43,11 +44,10 @@ protected:
   virtual bool move(QPointF destination);
 
 private:
-  const int hgh_saturation_;
-  const int low_saturation_;
-  const int min_view_dist_;
-  const int max_view_dist_;
-  //const int max_speed_;
+  int hgh_saturation_;
+  int low_saturation_;
+  int min_view_dist_;
+  int max_view_dist_;
   const Sex sex_;
   QVector<Kind> diet_;
 

@@ -8,8 +8,8 @@ namespace WDWE::logic::disasters
 class Meteor : public Inferno
 {
 public:
-  Meteor(WorldMap *world_map);
-  ~Meteor();
+  explicit Meteor(WorldMap *world_map, int duration, int max_size, float spread_pace);
+  virtual ~Meteor();
   void tick() override;
 
 private:

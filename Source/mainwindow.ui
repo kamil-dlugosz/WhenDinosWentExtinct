@@ -24,7 +24,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -41,18 +40,14 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAdd_New_Entity"/>
+   <addaction name="actionNew_Simulation"/>
    <addaction name="actionStart_New_Disaster"/>
    <addaction name="actionSimulation_Slower"/>
    <addaction name="actionSimulation_Pause"/>
    <addaction name="actionSimulation_Reset_Speed"/>
    <addaction name="actionSimulation_Faster"/>
+   <addaction name="actionExit_App"/>
   </widget>
-  <action name="actionAdd_New_Entity">
-   <property name="text">
-    <string>Add New Entity</string>
-   </property>
-  </action>
   <action name="actionStart_New_Disaster">
    <property name="text">
     <string>Start New Disaster</string>
@@ -79,6 +74,16 @@
   <action name="actionSimulation_Reset_Speed">
    <property name="text">
     <string>Simulation Reset Speed</string>
+   </property>
+  </action>
+  <action name="actionNew_Simulation">
+   <property name="text">
+    <string>New Simulation</string>
+   </property>
+  </action>
+  <action name="actionExit_App">
+   <property name="text">
+    <string>Exit App</string>
    </property>
   </action>
  </widget>

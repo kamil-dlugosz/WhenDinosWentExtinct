@@ -8,7 +8,7 @@ namespace WDWE::logic::entities
 class Tree : public Plant
 {
 public:
-  Tree(WorldMap *world_map, Kind getKind = Kind::TREE);
+  Tree(WorldMap *world_map, QPointF position, Kind getKind = Kind::TREE);
   virtual ~Tree();
   void tick() override;
   int eatMe() override;
@@ -23,9 +23,11 @@ public:
 protected:
   void spread() override;
   void grow() override;
+  bool incLeaves(int value = 1);
+  bool incFruits(int value = 1);
 
 private:
-  int max_leaves_;
+  int max_leaves_number_;
   int leaves_number_;
   int nutrients_per_leaf_;
   int max_fruits_number_;

@@ -8,7 +8,7 @@ namespace WDWE::logic::entities
 class Grass : public Plant
 {
 public:
-  Grass(WorldMap *world_map, Kind kind = Kind::GRASS);
+  Grass(WorldMap *world_map, QPointF position, Kind kind = Kind::GRASS);
   virtual ~Grass();
   void tick() override;
   int eatMe() override;
@@ -20,7 +20,6 @@ protected:
   int getLenght() const;
   int getMaxLenght() const;
   int getNutrientPerPiece() const;
-  bool isSaturated() const;
   void incLenght(int value = 1);
 
 private:

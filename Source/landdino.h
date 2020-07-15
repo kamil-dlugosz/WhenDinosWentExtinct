@@ -8,12 +8,11 @@ namespace WDWE::logic::entities
 class LandDino : public Dino
 {
 public:
-  LandDino(WorldMap *world_map, Kind kind = Kind::LANDDINO);
-  ~LandDino();
+  LandDino(WorldMap *world_map, QPointF position, Kind kind = Kind::LANDDINO);
+  virtual ~LandDino();
   void tick() override;
 
 private:
-  int running_speed_;
   AliveEntity *findFood() override;
   AliveEntity *findMate() override;
   void eat(AliveEntity *prey) override;

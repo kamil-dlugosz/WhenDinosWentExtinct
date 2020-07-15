@@ -5,16 +5,18 @@
 
 namespace WDWE::logic::entities
 {
-AliveEntity::AliveEntity(WorldMap *world_map, Kind kind)
+AliveEntity::AliveEntity(WorldMap *world_map, Kind kind, QPointF position)
   : world_map_(world_map)
   , kind_(kind)
+  , max_health_(100)
   , max_age_(7000)
   , max_fertility_(400)
   , max_saturation_(4000)
+  , health_(max_health_)
   , age_(0)
   , fertility_(0)
   , saturation_(3500)
-  , position_(QPoint(0 ,0))
+  , position_(position)
   , is_alive_(true)
 {
 
@@ -50,8 +52,10 @@ int AliveEntity::getFertility() const
   return fertility_;
 }
 
-bool AliveEntity::isAlive() const
+bool AliveEntity::isAlive()
 {
+  if (getAge() >= getMaxAge() || getSaturation() <= 0 || health_ <= 0)
+    killMe();
   return is_alive_;
 }
 
@@ -95,6 +99,16 @@ void AliveEntity::setSaturation(int value)
   saturation_ = value;
 }
 
+void AliveEntity::setMaxFertility(int value)
+{
+  max_fertility_ = value;
+}
+
+int AliveEntity::getMaxHealth() const
+{
+  return max_health_;
+}
+
 WorldMap *AliveEntity::getWorldMap() const
 {
   return world_map_;
@@ -120,7 +134,7 @@ QVector<Biome> AliveEntity::getAllowedBiomes()
   return allowed_biomes_;
 }
 
-bool AliveEntity::isPointReachable(QPointF point)
+bool AliveEntity::isInGoodBiome(QPointF point)
 {
   return allowed_biomes_.contains(getWorldMap()->biomeAtPixel(point));
 }
@@ -128,6 +142,13 @@ bool AliveEntity::isPointReachable(QPointF point)
 bool AliveEntity::isAdult() const
 {
   return (age_ > 0.3 * max_age_ && age_ < 0.7 * max_age_);
+}
+
+void AliveEntity::incHealth(int value)
+{
+  health_ += value;
+  if (health_ > max_health_)
+    health_ = max_health_;
 }
 
 int AliveEntity::getMaxAge() const
@@ -143,5 +164,10 @@ int AliveEntity::getSaturation() const
 int AliveEntity::getMaxSaturation() const
 {
   return max_saturation_;
+}
+
+int AliveEntity::getHealth() const
+{
+  return health_;
 }
 }

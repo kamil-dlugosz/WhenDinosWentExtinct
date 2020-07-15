@@ -8,14 +8,18 @@ namespace WDWE::logic::disasters
 class Drought : public Disaster
 {
 public:
-  Drought(WorldMap *world_map);
-  ~Drought();
+  explicit Drought(WorldMap *world_map, int duration, float drying_rate);
+  virtual ~Drought();
   void tick() override;
 
-private:
-  int vaporize_rate_;
+protected:
+  int getDryingRate() const;
 
-  void vaporizeWater();
+private:
+  float drying_rate_;
+
+  void dryingBiomes();
+  bool checkNeighbours(Biome biome, int x, int y);
 };
 }
 #endif // DROUGHT_H

@@ -8,13 +8,11 @@ namespace WDWE::logic::disasters
 class GammaRay : public Disaster
 {
 public:
-  GammaRay(WorldMap *world_map);
-  ~GammaRay();
+  explicit GammaRay(WorldMap *world_map, int duration, int hp_decrease);
+  virtual ~GammaRay();
   void tick() override;
 
 private:
-  int max_age_decrease_;
-  int max_hp_decrease_;
   int hp_decrease_;
 
   void damageDinos();

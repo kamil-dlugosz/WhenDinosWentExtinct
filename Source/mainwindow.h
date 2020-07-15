@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPainter>
 #include <QColor>
+#include "disasterdialog.h"
 #include "simulation.h"
 #include "resources.h"
 
@@ -18,18 +19,16 @@ class MainWindow : public QMainWindow
   Q_OBJECT
 public:
   MainWindow(QWidget *parent = nullptr);
-  ~MainWindow();
+  virtual ~MainWindow();
 
 private slots:
-  void on_actionSimulation_Pause_toggled(bool arg1);
-
+  void on_actionSimulation_Pause_toggled(bool is_paused);
   void on_actionSimulation_Reset_Speed_triggered();
-
   void on_actionSimulation_Slower_triggered();
-
   void on_actionSimulation_Faster_triggered();
-
   void on_actionStart_New_Disaster_triggered();
+  void on_actionExit_App_triggered();
+  void on_actionNew_Simulation_triggered();
 
 private:
   Ui::MainWindow *ui;

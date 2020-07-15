@@ -18,10 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     airdino.cpp \
     alga.cpp \
-    anihilation.cpp \
+    annihilation.cpp \
     bush.cpp \
     dino.cpp \
     disaster.cpp \
+    disasterdialog.cpp \
     drought.cpp \
     entity.cpp \
     gammaray.cpp \
@@ -41,14 +42,16 @@ SOURCES += \
 HEADERS += \
     airdino.h \
     alga.h \
-    anihilation.h \
+    annihilation.h \
     bush.h \
     dino.h \
     disaster.h \
+    disasterdialog.h \
     drought.h \
     entity.h \
     enum-biome.h \
     enum-kind.h \
+    enum-type.h \
     gammaray.h \
     grass.h \
     include-disasters.h \
@@ -65,6 +68,7 @@ HEADERS += \
     worldmap.h
 
 FORMS += \
+    disasterdialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

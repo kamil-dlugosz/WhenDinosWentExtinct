@@ -8,31 +8,45 @@ namespace WDWE::logic
 Simulation::Simulation()
   : timer_(new QTimer(this))
   , disaster_(nullptr)
-  , world_map_(createWorld())
+  , world_map_(nullptr)
   , default_interval_(1000.0/60.0)
   , interval_(default_interval_)
 {
+  createNewWorld();
   connect(timer_, SIGNAL(timeout()), this, SLOT(tick()));
   timer_->start(interval_);
-  for (int i = 0; i < 0; ++ i)
-    world_map_->entityAdd(entities::Kind::AIRDINO);
-  for (int i = 0; i < 1; ++ i)
-    world_map_->entityAdd(entities::Kind::LANDDINO);
-  for (int i = 0; i < 0; ++ i)
-    world_map_->entityAdd(entities::Kind::WATERDINO);
-  for (int i = 0; i < 10; ++ i)
-    world_map_->entityAdd(entities::Kind::ALGA);
-  for (int i = 0; i < 0; ++ i)
-    world_map_->entityAdd(entities::Kind::BUSH);
-  for (int i = 0; i < 100; ++ i)
-    world_map_->entityAdd(entities::Kind::GRASS);
-  for (int i = 0; i < 0; ++ i)
-    world_map_->entityAdd(entities::Kind::TREE);
 }
 
 Simulation::~Simulation()
 {
   delete world_map_;
+}
+
+void Simulation::createNewWorld()
+{
+  timer_->stop();
+  if (world_map_ != nullptr)
+    delete world_map_;
+  world_map_ = new WorldMap();
+  for (int i = 0; i < 20; ++ i)
+    world_map_->entityAdd(entities::Kind::AIRDINO);
+  for (int i = 0; i < 10; ++ i)
+    world_map_->entityAdd(entities::Kind::LANDDINO);
+  for (int i = 0; i < 10; ++ i)
+    world_map_->entityAdd(entities::Kind::WATERDINO);
+  for (int i = 0; i < 40; ++ i)
+    world_map_->entityAdd(entities::Kind::ALGA);
+  for (int i = 0; i < 70; ++ i)
+    world_map_->entityAdd(entities::Kind::BUSH);
+  for (int i = 0; i < 100; ++ i)
+    world_map_->entityAdd(entities::Kind::GRASS);
+  for (int i = 0; i < 50; ++ i)
+    world_map_->entityAdd(entities::Kind::TREE);
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
+  }
+  timer_->start();
 }
 
 void Simulation::simPause()
@@ -62,42 +76,49 @@ void Simulation::simResetSpeed()
   timer_->setInterval(default_interval_);
 }
 
-//bool Simulation::entityAdd(entities::AliveEntity *entity)
-//{
-//  return world_map_->entityAdd(entity);
-//}
-
-bool Simulation::entityAdd(entities::Kind kind)
-{
-  return world_map_->entityAdd(kind);
-}
-
-bool Simulation::startDisaster(disasters::Type type)
+void Simulation::startInferno(int duration, int size, float fire_rate)
 {
   if (disaster_ != nullptr) {
     delete disaster_;
     disaster_ = nullptr;
   }
-  switch (type) {
-  case disasters::Type::INFERNO:
-    disaster_ = new disasters::Inferno(world_map_);
-    break;
-  case disasters::Type::METEOR:
-    disaster_ = new disasters::Meteor(world_map_);
-    break;
-  case disasters::Type::GAMMARAY:
-    disaster_ = new disasters::GammaRay(world_map_);
-    break;
-  case disasters::Type::DROUGHT:
-    disaster_ = new disasters::Drought(world_map_);
-    break;
-  case disasters::Type::ANIHILATION:
-    disaster_ = new disasters::Anihilation(world_map_);
-    break;
-  default:
-    return false;
+  disaster_ = new disasters::Inferno(world_map_, duration, size, fire_rate);
+}
+
+void Simulation::startMeteor(int duration, int size, float fire_rate)
+{
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
   }
-  return true;
+  disaster_ = new disasters::Meteor(world_map_, duration, size, fire_rate);
+}
+
+void Simulation::startGammaRay(int duration, int rate)
+{
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
+  }
+  disaster_ = new disasters::GammaRay(world_map_, duration, rate);
+}
+
+void Simulation::startDrought(int duration, float drying_rate)
+{
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
+  }
+  disaster_ = new disasters::Drought(world_map_, duration, drying_rate);
+}
+
+void Simulation::startAnnihilation(entities::Kind target)
+{
+  if (disaster_ != nullptr) {
+    delete disaster_;
+    disaster_ = nullptr;
+  }
+  disaster_ = new disasters::Annihilation(world_map_, target);
 }
 
 //bool Simulation::entityErase(int index)
@@ -165,11 +186,6 @@ int Simulation::tileWidth() const
 int Simulation::tileHeight() const
 {
   return world_map_->tileHeight();
-}
-
-WorldMap *Simulation::createWorld()
-{
-  return new WorldMap;
 }
 
 void Simulation::tick()

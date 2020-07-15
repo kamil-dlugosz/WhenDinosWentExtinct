@@ -32,7 +32,7 @@ WorldMap::~WorldMap()
 {
   qDeleteAll(entity_list_);
   entity_list_.clear();
-  for (int x = 0; x < pixelWidth(); ++x)
+  for (int x = 0; x < tileWidth(); ++ x)
     delete[] biome_grid_[x];
   delete[] biome_grid_;
 }
@@ -59,23 +59,23 @@ bool WorldMap::entityAdd(entities::AliveEntity *entity)
   return true;
 }
 
-bool WorldMap::entityAdd(entities::Kind kind)
+bool WorldMap::entityAdd(entities::Kind kind, QPointF position)
 {
   switch (kind) {
   case entities::Kind::AIRDINO:
-    return entityAdd(new entities::AirDino(this));
+    return entityAdd(new entities::AirDino(this, position));
   case entities::Kind::LANDDINO:
-    return entityAdd(new entities::LandDino(this));
+    return entityAdd(new entities::LandDino(this, position));
   case entities::Kind::WATERDINO:
-    return entityAdd(new entities::WaterDino(this));
+    return entityAdd(new entities::WaterDino(this, position));
   case entities::Kind::ALGA:
-    return entityAdd(new entities::Alga(this));
+    return entityAdd(new entities::Alga(this, position));
   case entities::Kind::BUSH:
-    return entityAdd(new entities::Bush(this));
+    return entityAdd(new entities::Bush(this, position));
   case entities::Kind::GRASS:
-    return entityAdd(new entities::Grass(this));
+    return entityAdd(new entities::Grass(this, position));
   case entities::Kind::TREE:
-    return entityAdd(new entities::Tree(this));
+    return entityAdd(new entities::Tree(this, position));
   default:
     return false;
   }
@@ -161,10 +161,12 @@ Biome WorldMap::biomeAtTile(QPointF position) const
   return biome_grid_[pos.x()][ pos.y()];
 }
 
-bool WorldMap::biomeChange(Biome biome, int x, int y)
+bool WorldMap::biomeChange(Biome biome, int x, int y, bool tile)
 {
-  x = x >> shift_;
-  y = y >> shift_;
+  if (tile) {
+    x = x >> shift_;
+    y = y >> shift_;
+  }
   if (x < 0 || y < 0 || x >= biome_width_ || y >= biome_height_)
     return false;
   biome_grid_[x][y] = biome;
@@ -189,5 +191,10 @@ int WorldMap::tileWidth() const
 int WorldMap::tileHeight() const
 {
   return biome_height_;
+}
+
+int WorldMap::tileSize() const
+{
+  return 1 << shift_;
 }
 }

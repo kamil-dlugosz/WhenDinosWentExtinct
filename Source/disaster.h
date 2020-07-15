@@ -2,24 +2,14 @@
 #define DISASTER_H
 
 #include "worldmap.h"
+#include "enum-type.h"
 
 namespace WDWE::logic::disasters
 {
-enum Type {
-  INVALID = 0,
-
-  INFERNO,
-  METEOR,
-  GAMMARAY,
-  DROUGHT,
-  ANIHILATION,
-
-  TOTAL
-};
 class Disaster
 {  
 public:
-  Disaster(WorldMap *world_map, Type type);
+  explicit Disaster(WorldMap *world_map, int duration, Type type);
   virtual ~Disaster();
   virtual void tick();
   Type getType() const;
@@ -29,6 +19,7 @@ protected:
   WorldMap *getWorldMap() const;
   int getDurationTotal() const;
   int getDurationLeft() const;
+  void endDisaster();
 
 private:
   WorldMap *const world_map_;

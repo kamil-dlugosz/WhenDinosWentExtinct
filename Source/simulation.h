@@ -15,23 +15,22 @@ class Simulation : public QObject
   Q_OBJECT
 public:
   Simulation();
-  ~Simulation();
+  virtual ~Simulation();
+  void createNewWorld();
   void simPause();
   void simStart();
   void simFaster();
   void simSlower();
   void simResetSpeed();
-//  bool entityAdd(entities::AliveEntity* entity);
-  bool entityAdd(entities::Kind kind);
-  bool startDisaster(disasters::Type type);
-//  bool entityErase(int index);
-//  bool entityErase(entities::AliveEntity* entity);
-//  int eatMeAt(int index);
+  void startInferno(int duration, int size, float fire_rate);
+  void startMeteor(int duration, int size, float fire_rate);
+  void startGammaRay(int duration, int rate);
+  void startDrought(int duration, float drying_rate);
+  void startAnnihilation(entities::Kind target);
   entities::Kind kindAt(int index) const;
   QPointF positionAt(int index) const;
   int entityNumber() const;
   Biome biomeAt(int x, int y) const;
-//  bool biomeChange(Biome biome, int x, int y);
   bool getDisasterType() const;
   int pixelWidth() const;
   int pixelHeight() const;
@@ -42,10 +41,8 @@ private:
   QTimer *timer_;
   disasters::Disaster *disaster_;
   WorldMap *world_map_;
-  float default_interval_;
+  const float default_interval_;
   float interval_;
-
-  WorldMap *createWorld();
 
 private slots:
   void tick();

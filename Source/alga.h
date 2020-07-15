@@ -8,8 +8,8 @@ namespace WDWE::logic::entities
 class Alga : public Grass
 {
 public:
-  Alga(WorldMap *world_map, Kind getKind = Kind::ALGA);
-  ~Alga();
+  Alga(WorldMap *world_map, QPointF position, Kind getKind = Kind::ALGA);
+  virtual ~Alga();
   void tick() override;
   int eatMe() override;
 

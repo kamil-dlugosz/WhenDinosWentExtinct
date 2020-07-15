@@ -4,8 +4,8 @@
 
 namespace WDWE::logic::entities
 {
-WaterDino::WaterDino(WorldMap *world_map, Kind kind)
-  : Dino(world_map, kind)
+WaterDino::WaterDino(WorldMap *world_map, QPointF position, Kind kind)
+  : Dino(world_map, position, kind)
 {
   QVector<Biome> allowed_biomes(2);
   allowed_biomes[0] = Biome::WATER;
@@ -17,7 +17,7 @@ WaterDino::WaterDino(WorldMap *world_map, Kind kind)
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
                         QRandomGenerator::system()
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
-    if (isPointReachable(getPosition()))
+    if (isInGoodBiome(getPosition()))
       break;
     if (i ++ > max)
       killMe();
@@ -104,11 +104,6 @@ void WaterDino::unpair()
     if (mate->getMate() == this)
       mate->setMate(nullptr);
   this->setMate(nullptr);
-}
-
-void WaterDino::takeABreath()
-{
-
 }
 
 bool WaterDino::move(QPointF destination)

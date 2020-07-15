@@ -4,8 +4,8 @@
 
 namespace WDWE::logic::entities
 {
-Bush::Bush(WorldMap *world_map, Kind kind)
-  : Tree(world_map, kind)
+Bush::Bush(WorldMap *world_map, QPointF position, Kind kind)
+  : Tree(world_map, position, kind)
 {
   QVector<Biome> allowed_biomes(2);
   allowed_biomes[0] = Biome::SAVANNA;
@@ -17,11 +17,12 @@ Bush::Bush(WorldMap *world_map, Kind kind)
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
                         QRandomGenerator::system()
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
-    if (isPointReachable(getPosition()))
+    if (isInGoodBiome(getPosition()))
       break;
     if (i ++ > max)
       killMe();
   }
+  setMaxFertility(5000);
 }
 
 Bush::~Bush()
@@ -31,7 +32,7 @@ Bush::~Bush()
 
 void Bush::tick()
 {
-
+  Tree::tick();
 }
 
 int Bush::eatMe()
@@ -41,11 +42,11 @@ int Bush::eatMe()
 
 void Bush::spread()
 {
-
+  Tree::spread();
 }
 
 void Bush::grow()
 {
-
+  Tree::spread();
 }
 }

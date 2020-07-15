@@ -11,11 +11,11 @@ class WorldMap
 {
 public:
   WorldMap();
-  ~WorldMap();
+  virtual ~WorldMap();
   void tick();
   entities::AliveEntity *entityAt(int index);
   bool entityAdd(entities::AliveEntity* entity);
-  bool entityAdd(entities::Kind kind);
+  bool entityAdd(entities::Kind kind, QPointF position = QPointF(0, 0));
   bool entityErase(int index);
   bool entityErase(entities::AliveEntity* entity);
   int eatMeAt(int index);
@@ -27,11 +27,12 @@ public:
   Biome biomeAtPixel(QPointF position) const;
   Biome biomeAtTile(int x, int y) const;
   Biome biomeAtTile(QPointF position) const;
-  bool biomeChange(Biome biome, int x, int y);
+  bool biomeChange(Biome biome, int x, int y, bool tile = true);
   int pixelWidth() const;
   int pixelHeight() const;
   int tileWidth() const;
   int tileHeight() const;
+  int tileSize() const;
 
 private:
   QList<entities::AliveEntity*> entity_list_;

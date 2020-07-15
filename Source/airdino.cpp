@@ -5,8 +5,8 @@
 
 namespace WDWE::logic::entities
 {
-AirDino::AirDino(WorldMap *world_map, Kind kind)
-  : Dino(world_map, kind)
+AirDino::AirDino(WorldMap *world_map, QPointF position, Kind kind)
+  : Dino(world_map, position, kind)
 {
 //  qDebug() << static_cast<int>(getSex());
   QVector<Biome> allowed_biomes(5);
@@ -22,7 +22,7 @@ AirDino::AirDino(WorldMap *world_map, Kind kind)
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
                         QRandomGenerator::system()
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
-    if (isPointReachable(getPosition()))
+    if (isInGoodBiome(getPosition()))
       break;
     if (i ++ > max)
       killMe();

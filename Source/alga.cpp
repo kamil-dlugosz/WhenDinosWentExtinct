@@ -4,8 +4,8 @@
 
 namespace WDWE::logic::entities
 {
-Alga::Alga(WorldMap *world_map, Kind kind)
-  : Grass(world_map, kind)
+Alga::Alga(WorldMap *world_map, QPointF position, Kind kind)
+  : Grass(world_map, position, kind)
 {
   QVector<Biome> allowed_biomes(2);
   allowed_biomes[0] = Biome::WATER;
@@ -17,11 +17,12 @@ Alga::Alga(WorldMap *world_map, Kind kind)
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelWidth())),
                         QRandomGenerator::system()
                         ->bounded(quint32(0), quint32(getWorldMap()->pixelHeight()))));
-    if (isPointReachable(getPosition()))
+    if (isInGoodBiome(getPosition()))
       break;
     if (i ++ > max)
       killMe();
   }
+  setMaxFertility(2500);
 }
 
 Alga::~Alga()
