@@ -1,0 +1,334 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{}\doxysection{W\+D\+WE\+::logic\+::entities\+::Alive\+Entity Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+
+
+Klasa implementująca ogólne cechy istot.  
+
+
+
+
+{\ttfamily \#include $<$entity.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::entities\+::Alive\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.206897cm]{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2bbf20aad646d850d749734aa6201ad2}{Alive\+Entity}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}{get\+Kind}}, Q\+PointF position=Q\+PointF(0, 0))
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4c849f4a6c4fec27ad49b088dc104f7f}{$\sim$\+Alive\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ab52306d583b36ee9f9d93e998eda5a42}{tick}} ()
+\item 
+virtual int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12dcc8bb6a60f89776f66358f0c47294}{eat\+Me}} ()=0
+\begin{DoxyCompactList}\small\item\em Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}{get\+Kind}} () const
+\item 
+Q\+PointF \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad8154532a6655c5ead1677b60b867629}{get\+Position}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad099639cdcc2f6a3ad8c0c1f801aa4be}{get\+Age}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a134b82ab9f44c6eed0a7413a107c280b}{get\+Fertility}} () const
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a56d6e58d72134953d759f5936a39e82b}{is\+Alive}} ()
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a1f4737d388cc1e6c47bad5de90298a01}{is\+Fertile}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy istota jest płoda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_aec19fe5c6a6063721e2ef8fe331e246a}{inc\+Health}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie życia aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0db4db97c32f0c6096e7b3d661730083}{get\+World\+Map}} () const
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4439a106ed1fabc6eb0cd1ffee782d00}{set\+Position}} (Q\+PointF position)
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a871f90f733220dd48801e0dc4edd039e}{kill\+Me}} ()
+\begin{DoxyCompactList}\small\item\em Oznacza istotę jako martwą. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a60455ab5459971bf64660e4cbf58382c}{set\+Allowed\+Biomes}} (Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} $>$ new\+\_\+biomes)
+\begin{DoxyCompactList}\small\item\em Ustawia wektor biomów dozwolonych dla istot. Gdy są poza nią otrzymują obrażenia. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} $>$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a5287e8aea81d5cd2feb3400b850da83a}{get\+Allowed\+Biomes}} ()
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a500ea3be32849a81f8264bbd5ae05558}{is\+In\+Good\+Biome}} (Q\+PointF point)
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy jest w jednym z dozwolonych biomów. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_adb8ffeabf74b8fa0ff1e0e2591ea88ff}{is\+Adult}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy istota jest w płodnym wieku. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a23268268edd41b944b958368edc13bbc}{inc\+Age}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie wieku aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_afbd9cb34c8029819bc5bcc16f3f32ecf}{inc\+Fertility}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie płodności aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ac4ac1d9f47628b9d6400d3d96779ddd7}{inc\+Saturation}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie najedzenia aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a9adc93f25a2736049f8c0343fa93cb94}{reset\+Fertility}} ()
+\begin{DoxyCompactList}\small\item\em Ustawia płodność na 0;. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0ed167ae2f4b480cd281ddf43c1a86f5}{set\+Saturation}} (int value=0)
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a01cfe387a0d2c42fa0026340776ee2ef}{set\+Max\+Fertility}} (int value)
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2c4fc24157e2d284d7fbbd8e530ad6b2}{get\+Max\+Health}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a7bb9d37a0ba128f16244380068d762d6}{get\+Max\+Age}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a172fd661aea5053de7d9e61308c2bb59}{get\+Saturation}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12073e280061e4e85c8398e6285e31be}{get\+Max\+Saturation}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a18dd441ffcd64a35a15277271f96c957}{get\+Health}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa implementująca ogólne cechy istot. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2bbf20aad646d850d749734aa6201ad2}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2bbf20aad646d850d749734aa6201ad2}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!AliveEntity@{AliveEntity}}
+\index{AliveEntity@{AliveEntity}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{AliveEntity()}{AliveEntity()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::\+Alive\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{get\+Kind,  }\item[{Q\+PointF}]{position = {\ttfamily QPointF(0,~0)} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4c849f4a6c4fec27ad49b088dc104f7f}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4c849f4a6c4fec27ad49b088dc104f7f}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!````~AliveEntity@{$\sim$AliveEntity}}
+\index{````~AliveEntity@{$\sim$AliveEntity}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{$\sim$AliveEntity()}{~AliveEntity()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::$\sim$\+Alive\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12dcc8bb6a60f89776f66358f0c47294}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12dcc8bb6a60f89776f66358f0c47294}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!eatMe@{eatMe}}
+\index{eatMe@{eatMe}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{eatMe()}{eatMe()}}
+{\footnotesize\ttfamily virtual int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::eat\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. 
+
+
+
+Implemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_a0cb57abbae2d9f506b9e0d452f41cc00}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_bush_adafd8f90aed23dd4f5787f83c783f4c0}{W\+D\+W\+E\+::logic\+::entities\+::\+Bush}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a7a2a6ad1e04315c9807c8cb45577fb3c}{W\+D\+W\+E\+::logic\+::entities\+::\+Grass}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_air_dino_afa162d195ca55d0d510b28b49b5ddb2d}{W\+D\+W\+E\+::logic\+::entities\+::\+Air\+Dino}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a21b0fe3ed9bb4c0db55808aa53d9a297}{W\+D\+W\+E\+::logic\+::entities\+::\+Tree}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_afe0e2f396c847c23df79ffd866f57884}{W\+D\+W\+E\+::logic\+::entities\+::\+Water\+Dino}}, and \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_land_dino_af37c98ad46d1a38ff7349c764e20be00}{W\+D\+W\+E\+::logic\+::entities\+::\+Land\+Dino}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad099639cdcc2f6a3ad8c0c1f801aa4be}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad099639cdcc2f6a3ad8c0c1f801aa4be}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getAge@{getAge}}
+\index{getAge@{getAge}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getAge()}{getAge()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a5287e8aea81d5cd2feb3400b850da83a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a5287e8aea81d5cd2feb3400b850da83a}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getAllowedBiomes@{getAllowedBiomes}}
+\index{getAllowedBiomes@{getAllowedBiomes}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getAllowedBiomes()}{getAllowedBiomes()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} $>$ W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Allowed\+Biomes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a134b82ab9f44c6eed0a7413a107c280b}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a134b82ab9f44c6eed0a7413a107c280b}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getFertility@{getFertility}}
+\index{getFertility@{getFertility}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getFertility()}{getFertility()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Fertility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a18dd441ffcd64a35a15277271f96c957}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a18dd441ffcd64a35a15277271f96c957}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getKind@{getKind}}
+\index{getKind@{getKind}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getKind()}{getKind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a7bb9d37a0ba128f16244380068d762d6}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a7bb9d37a0ba128f16244380068d762d6}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getMaxAge@{getMaxAge}}
+\index{getMaxAge@{getMaxAge}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getMaxAge()}{getMaxAge()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Max\+Age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2c4fc24157e2d284d7fbbd8e530ad6b2}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a2c4fc24157e2d284d7fbbd8e530ad6b2}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getMaxHealth@{getMaxHealth}}
+\index{getMaxHealth@{getMaxHealth}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getMaxHealth()}{getMaxHealth()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12073e280061e4e85c8398e6285e31be}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12073e280061e4e85c8398e6285e31be}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getMaxSaturation@{getMaxSaturation}}
+\index{getMaxSaturation@{getMaxSaturation}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getMaxSaturation()}{getMaxSaturation()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Max\+Saturation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad8154532a6655c5ead1677b60b867629}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ad8154532a6655c5ead1677b60b867629}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily Q\+PointF W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a172fd661aea5053de7d9e61308c2bb59}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a172fd661aea5053de7d9e61308c2bb59}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getSaturation@{getSaturation}}
+\index{getSaturation@{getSaturation}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getSaturation()}{getSaturation()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+Saturation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0db4db97c32f0c6096e7b3d661730083}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0db4db97c32f0c6096e7b3d661730083}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!getWorldMap@{getWorldMap}}
+\index{getWorldMap@{getWorldMap}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{getWorldMap()}{getWorldMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$ W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::get\+World\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a23268268edd41b944b958368edc13bbc}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a23268268edd41b944b958368edc13bbc}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!incAge@{incAge}}
+\index{incAge@{incAge}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{incAge()}{incAge()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::inc\+Age (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie wieku aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_afbd9cb34c8029819bc5bcc16f3f32ecf}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_afbd9cb34c8029819bc5bcc16f3f32ecf}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!incFertility@{incFertility}}
+\index{incFertility@{incFertility}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{incFertility()}{incFertility()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::inc\+Fertility (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie płodności aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_aec19fe5c6a6063721e2ef8fe331e246a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_aec19fe5c6a6063721e2ef8fe331e246a}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!incHealth@{incHealth}}
+\index{incHealth@{incHealth}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{incHealth()}{incHealth()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::inc\+Health (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Zwiększanie życia aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ac4ac1d9f47628b9d6400d3d96779ddd7}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ac4ac1d9f47628b9d6400d3d96779ddd7}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!incSaturation@{incSaturation}}
+\index{incSaturation@{incSaturation}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{incSaturation()}{incSaturation()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::inc\+Saturation (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie najedzenia aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_adb8ffeabf74b8fa0ff1e0e2591ea88ff}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_adb8ffeabf74b8fa0ff1e0e2591ea88ff}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!isAdult@{isAdult}}
+\index{isAdult@{isAdult}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{isAdult()}{isAdult()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::is\+Adult (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca true gdy istota jest w płodnym wieku. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_af603a8aa0b3ce6997616f930e2b08cc5}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a56d6e58d72134953d759f5936a39e82b}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a56d6e58d72134953d759f5936a39e82b}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{isAlive()}{isAlive()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Zwraca true gdy istota jest żywa (dodatnie życie, wiek mniejszy od maksimum itp.) \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a1f4737d388cc1e6c47bad5de90298a01}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a1f4737d388cc1e6c47bad5de90298a01}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!isFertile@{isFertile}}
+\index{isFertile@{isFertile}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{isFertile()}{isFertile()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::is\+Fertile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zwraca true gdy istota jest płoda. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a500ea3be32849a81f8264bbd5ae05558}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a500ea3be32849a81f8264bbd5ae05558}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!isInGoodBiome@{isInGoodBiome}}
+\index{isInGoodBiome@{isInGoodBiome}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{isInGoodBiome()}{isInGoodBiome()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::is\+In\+Good\+Biome (\begin{DoxyParamCaption}\item[{Q\+PointF}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca true gdy jest w jednym z dozwolonych biomów. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a871f90f733220dd48801e0dc4edd039e}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a871f90f733220dd48801e0dc4edd039e}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!killMe@{killMe}}
+\index{killMe@{killMe}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{killMe()}{killMe()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::kill\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Oznacza istotę jako martwą. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a9adc93f25a2736049f8c0343fa93cb94}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a9adc93f25a2736049f8c0343fa93cb94}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!resetFertility@{resetFertility}}
+\index{resetFertility@{resetFertility}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{resetFertility()}{resetFertility()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::reset\+Fertility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ustawia płodność na 0;. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a60455ab5459971bf64660e4cbf58382c}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a60455ab5459971bf64660e4cbf58382c}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!setAllowedBiomes@{setAllowedBiomes}}
+\index{setAllowedBiomes@{setAllowedBiomes}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{setAllowedBiomes()}{setAllowedBiomes()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::set\+Allowed\+Biomes (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} $>$}]{new\+\_\+biomes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ustawia wektor biomów dozwolonych dla istot. Gdy są poza nią otrzymują obrażenia. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a01cfe387a0d2c42fa0026340776ee2ef}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a01cfe387a0d2c42fa0026340776ee2ef}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!setMaxFertility@{setMaxFertility}}
+\index{setMaxFertility@{setMaxFertility}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{setMaxFertility()}{setMaxFertility()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::set\+Max\+Fertility (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4439a106ed1fabc6eb0cd1ffee782d00}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a4439a106ed1fabc6eb0cd1ffee782d00}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{Q\+PointF}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0ed167ae2f4b480cd281ddf43c1a86f5}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a0ed167ae2f4b480cd281ddf43c1a86f5}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!setSaturation@{setSaturation}}
+\index{setSaturation@{setSaturation}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{setSaturation()}{setSaturation()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::set\+Saturation (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ab52306d583b36ee9f9d93e998eda5a42}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ab52306d583b36ee9f9d93e998eda5a42}} 
+\index{WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::entities::AliveEntity@{WDWE::logic::entities::AliveEntity}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Funkcja aktualizująca paramety istoty z każdym krokiem symulacji. Regeneruje życie, zarządza głodem, płodnością, itp. 
+
+Reimplemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5eb6ac367e659a8d80e524d19bb6a2b0}{W\+D\+W\+E\+::logic\+::entities\+::\+Dino}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_bush_a450587534ffd1aaf81dd647a1ae92562}{W\+D\+W\+E\+::logic\+::entities\+::\+Bush}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a8c64e5ca6323c12a35c52c7c452fc827}{W\+D\+W\+E\+::logic\+::entities\+::\+Grass}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_ae8324af5c1f2f3b92e1ffddf2da18980}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ab546a15f94402b2397d38fc5ad7471ef}{W\+D\+W\+E\+::logic\+::entities\+::\+Tree}}, and \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alga_ab6500f8fa9b1e40881cb382b4e0b1ac9}{W\+D\+W\+E\+::logic\+::entities\+::\+Alga}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{entity_8h}{entity.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{entity_8cpp}{entity.\+cpp}}\end{DoxyCompactItemize}

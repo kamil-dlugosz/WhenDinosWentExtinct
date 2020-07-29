@@ -1,0 +1,72 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino}{}\doxysection{W\+D\+WE\+::logic\+::entities\+::Water\+Dino Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino}\index{WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}}
+
+
+Klasa definiująca dinozaury pływające.  
+
+
+
+
+{\ttfamily \#include $<$waterdino.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::entities\+::Water\+Dino\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_a6de610707231e822178b5c7320d131b2}{Water\+Dino}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, Q\+PointF position, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} kind=Kind\+::\+W\+A\+T\+E\+R\+D\+I\+NO)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_aab047878de18a519d5aa01460398f6b7}{$\sim$\+Water\+Dino}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_afe0e2f396c847c23df79ffd866f57884}{eat\+Me}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Klasa definiująca dinozaury pływające. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_a6de610707231e822178b5c7320d131b2}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_a6de610707231e822178b5c7320d131b2}} 
+\index{WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}!WaterDino@{WaterDino}}
+\index{WaterDino@{WaterDino}!WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}}
+\doxysubsubsection{\texorpdfstring{WaterDino()}{WaterDino()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Water\+Dino\+::\+Water\+Dino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{Q\+PointF}]{position,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{kind = {\ttfamily Kind\+:\+:WATERDINO} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_aab047878de18a519d5aa01460398f6b7}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_aab047878de18a519d5aa01460398f6b7}} 
+\index{WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}!````~WaterDino@{$\sim$WaterDino}}
+\index{````~WaterDino@{$\sim$WaterDino}!WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}}
+\doxysubsubsection{\texorpdfstring{$\sim$WaterDino()}{~WaterDino()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Water\+Dino\+::$\sim$\+Water\+Dino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_afe0e2f396c847c23df79ffd866f57884}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_water_dino_afe0e2f396c847c23df79ffd866f57884}} 
+\index{WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}!eatMe@{eatMe}}
+\index{eatMe@{eatMe}!WDWE::logic::entities::WaterDino@{WDWE::logic::entities::WaterDino}}
+\doxysubsubsection{\texorpdfstring{eatMe()}{eatMe()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Water\+Dino\+::eat\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Funkcja reagująca na bycie zjadanym. 50\% szans, że zostanie zjedzony. Zwraca wartość odżywczą oraz zabija dinozaura gdy pomyślne. Gdy nie -\/ zwraca 0; 
+
+Implements \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_a12dcc8bb6a60f89776f66358f0c47294}{W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{waterdino_8h}{waterdino.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{waterdino_8cpp}{waterdino.\+cpp}}\end{DoxyCompactItemize}

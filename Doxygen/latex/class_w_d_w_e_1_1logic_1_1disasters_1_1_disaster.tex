@@ -1,0 +1,150 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster}{}\doxysection{W\+D\+WE\+::logic\+::disasters\+::Disaster Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster}\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+
+
+Abstrakcyjna klasa implementująca ogólne cechy Katastrof.  
+
+
+
+
+{\ttfamily \#include $<$disaster.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::disasters\+::Disaster\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.909091cm]{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aa446ef7d5bcbaaaa3ee9c4bd9620f880}{Disaster}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, int duration, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}} type)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_afecd315e6759dd681241204ee3de8949}{$\sim$\+Disaster}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a81d55978ab004feb06a562b45f1bbd3d}{tick}} ()
+\begin{DoxyCompactList}\small\item\em Funckja aktualizująca parametry katastrofy za każdym krokiem symulacji. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_abb59019084695ac4dc82fb6511b40a84}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Funkcja zwracająca typ katastrofy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4ec9f12146f61cbed02940cfb96c860e}{has\+Ended}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca true, gdy katastrofa dobiegnie końca. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a6511f5fd859498ed7130a2a6cf484893}{get\+World\+Map}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca wskaźnik na planszę. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aaef4dc7fc90e9dc1157f2f580be1bfd1}{get\+Duration\+Total}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca maksymalną ilość kroków symulacji, która będzie trwać katastrofa. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4146739da51791f34c0637a5fec108e8}{get\+Duration\+Left}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca ilość kroków symulacji, którą jeszcze będzie trwać katastrofa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_ad4b4ed3182b0d67ade2f7f81dd75794a}{end\+Disaster}} ()
+\begin{DoxyCompactList}\small\item\em Kończy katastofę. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstrakcyjna klasa implementująca ogólne cechy Katastrof. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aa446ef7d5bcbaaaa3ee9c4bd9620f880}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aa446ef7d5bcbaaaa3ee9c4bd9620f880}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!Disaster@{Disaster}}
+\index{Disaster@{Disaster}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{Disaster()}{Disaster()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::\+Disaster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{int}]{duration,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_afecd315e6759dd681241204ee3de8949}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_afecd315e6759dd681241204ee3de8949}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!````~Disaster@{$\sim$Disaster}}
+\index{````~Disaster@{$\sim$Disaster}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{$\sim$Disaster()}{~Disaster()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::$\sim$\+Disaster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_ad4b4ed3182b0d67ade2f7f81dd75794a}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_ad4b4ed3182b0d67ade2f7f81dd75794a}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!endDisaster@{endDisaster}}
+\index{endDisaster@{endDisaster}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{endDisaster()}{endDisaster()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::end\+Disaster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Kończy katastofę. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4146739da51791f34c0637a5fec108e8}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4146739da51791f34c0637a5fec108e8}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!getDurationLeft@{getDurationLeft}}
+\index{getDurationLeft@{getDurationLeft}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{getDurationLeft()}{getDurationLeft()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::get\+Duration\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca ilość kroków symulacji, którą jeszcze będzie trwać katastrofa. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aaef4dc7fc90e9dc1157f2f580be1bfd1}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_aaef4dc7fc90e9dc1157f2f580be1bfd1}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!getDurationTotal@{getDurationTotal}}
+\index{getDurationTotal@{getDurationTotal}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{getDurationTotal()}{getDurationTotal()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::get\+Duration\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca maksymalną ilość kroków symulacji, która będzie trwać katastrofa. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_abb59019084695ac4dc82fb6511b40a84}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_abb59019084695ac4dc82fb6511b40a84}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!getType@{getType}}
+\index{getType@{getType}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}} W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Funkcja zwracająca typ katastrofy. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a6511f5fd859498ed7130a2a6cf484893}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a6511f5fd859498ed7130a2a6cf484893}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!getWorldMap@{getWorldMap}}
+\index{getWorldMap@{getWorldMap}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{getWorldMap()}{getWorldMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$ W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::get\+World\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca wskaźnik na planszę. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4ec9f12146f61cbed02940cfb96c860e}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a4ec9f12146f61cbed02940cfb96c860e}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!hasEnded@{hasEnded}}
+\index{hasEnded@{hasEnded}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{hasEnded()}{hasEnded()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::has\+Ended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Zwraca true, gdy katastrofa dobiegnie końca. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a81d55978ab004feb06a562b45f1bbd3d}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a81d55978ab004feb06a562b45f1bbd3d}} 
+\index{WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::disasters::Disaster@{WDWE::logic::disasters::Disaster}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Funckja aktualizująca parametry katastrofy za każdym krokiem symulacji. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a5f5b0950385fe4eae53377a7d9e6c7af}{W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_annihilation_a5da43f120cb219f0babf3bfe5587017c}{W\+D\+W\+E\+::logic\+::disasters\+::\+Annihilation}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_gamma_ray_a566820751a79c479084a0157f7aff48b}{W\+D\+W\+E\+::logic\+::disasters\+::\+Gamma\+Ray}}, \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_meteor_a4826fcf59a29e50abd0fdc89a372559d}{W\+D\+W\+E\+::logic\+::disasters\+::\+Meteor}}, and \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_drought_a31c68b1de7b677aab226bc5416e33eaf}{W\+D\+W\+E\+::logic\+::disasters\+::\+Drought}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{disaster_8h}{disaster.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{disaster_8cpp}{disaster.\+cpp}}\end{DoxyCompactItemize}

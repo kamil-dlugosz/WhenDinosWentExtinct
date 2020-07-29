@@ -3,6 +3,7 @@
 
 namespace WDWE::logic
 {
+//! Typ enumeratywny definiujący rodzaje terenu.
 enum Biome
 {
   INVALID = 0,

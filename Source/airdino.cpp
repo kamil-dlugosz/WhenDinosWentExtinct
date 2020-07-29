@@ -39,14 +39,13 @@ AirDino::~AirDino()
 
 }
 
-void AirDino::tick()
+int AirDino::eatMe()
 {
-  Dino::tick();
-}
-
-AliveEntity *AirDino::findFood()
-{
-  return Dino::findFood();
+  if (8 < QRandomGenerator::system()->bounded(10)) {
+    killMe();
+    return 2000;
+  }
+  return 0;
 }
 
 AliveEntity *AirDino::findMate()
@@ -71,11 +70,6 @@ AliveEntity *AirDino::findMate()
       closest_mate = potencial_mate;
     }}
   return closest_mate;
-}
-
-void AirDino::eat(AliveEntity *prey)
-{
-  Dino::eat(prey);
 }
 
 void AirDino::mating()
@@ -113,10 +107,5 @@ void AirDino::unpair()
     if (mate->getMate() == this)
       mate->setMate(nullptr);
   this->setMate(nullptr);
-}
-
-bool AirDino::move(QPointF destination)
-{
-  return Dino::move(destination);
 }
 }

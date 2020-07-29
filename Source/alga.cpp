@@ -35,11 +35,6 @@ void Alga::tick()
   Grass::tick();
 }
 
-int Alga::eatMe()
-{
-  return Plant::eatMe();
-}
-
 void Alga::spread()
 {
   Grass::spread();

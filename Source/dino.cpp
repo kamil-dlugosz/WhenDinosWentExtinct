@@ -57,12 +57,6 @@ void Dino::tick()
   incSaturation(-QRandomGenerator::system()->bounded(5));
 }
 
-int Dino::eatMe()
-{
-  killMe();
-  return 3000;
-}
-
 Dino *Dino::getMate() const
 {
   return mate_;

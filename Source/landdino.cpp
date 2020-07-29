@@ -35,14 +35,10 @@ LandDino::~LandDino()
 
 }
 
-void LandDino::tick()
+int LandDino::eatMe()
 {
-  Dino::tick();
-}
-
-AliveEntity *LandDino::findFood()
-{
-  return Dino::findFood();
+  killMe();
+  return 3000;
 }
 
 AliveEntity *LandDino::findMate()
@@ -67,11 +63,6 @@ AliveEntity *LandDino::findMate()
       closest_mate = potencial_mate;
     }}
   return closest_mate;
-}
-
-void LandDino::eat(AliveEntity *prey)
-{
-  Dino::eat(prey);
 }
 
 void LandDino::mating()
@@ -107,10 +98,5 @@ void LandDino::unpair()
     if (mate->getMate() == this)
       mate->setMate(nullptr);
   this->setMate(nullptr);
-}
-
-bool LandDino::move(QPointF destination)
-{
-  return Dino::move(destination);
 }
 }

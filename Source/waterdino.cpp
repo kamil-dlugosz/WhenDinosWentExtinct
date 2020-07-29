@@ -32,14 +32,13 @@ WaterDino::~WaterDino()
 
 }
 
-void WaterDino::tick()
+int WaterDino::eatMe()
 {
-  Dino::tick();
-}
-
-AliveEntity *WaterDino::findFood()
-{
-  return Dino::findFood();
+  if (5 < QRandomGenerator::system()->bounded(10)) {
+    killMe();
+    return 2500;
+  }
+  return 0;
 }
 
 AliveEntity *WaterDino::findMate()
@@ -64,11 +63,6 @@ AliveEntity *WaterDino::findMate()
       closest_mate = potencial_mate;
     }}
   return closest_mate;
-}
-
-void WaterDino::eat(AliveEntity *prey)
-{
-  Dino::eat(prey);
 }
 
 void WaterDino::mating()
@@ -104,10 +98,5 @@ void WaterDino::unpair()
     if (mate->getMate() == this)
       mate->setMate(nullptr);
   this->setMate(nullptr);
-}
-
-bool WaterDino::move(QPointF destination)
-{
-  return Dino::move(destination);
 }
 }

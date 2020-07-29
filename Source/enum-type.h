@@ -3,6 +3,7 @@
 
 namespace WDWE::logic::disasters
 {
+//! Typ enumeratywny definiujący katastrofy.
 enum Type {
   INVALID = 0,
 

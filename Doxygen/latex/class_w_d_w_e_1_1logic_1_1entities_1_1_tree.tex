@@ -1,0 +1,194 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree}{}\doxysection{W\+D\+WE\+::logic\+::entities\+::Tree Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree}\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+
+
+Klasa implementująca drzewo.  
+
+
+
+
+{\ttfamily \#include $<$tree.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::entities\+::Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_w_d_w_e_1_1logic_1_1entities_1_1_tree}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a5f49666805da5b237a9d19ade769d02c}{Tree}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, Q\+PointF position, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}{get\+Kind}}=Kind\+::\+T\+R\+EE)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a59d2a00b091b6420de262ee74f132da7}{$\sim$\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ab546a15f94402b2397d38fc5ad7471ef}{tick}} () override
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a21b0fe3ed9bb4c0db55808aa53d9a297}{eat\+Me}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a07d5af7700daf01426cb2ab43f0e8267}{get\+Max\+Leaves}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ad31c07255d0cd90ba94d4c87a715a610}{get\+Leaves\+Number}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a34b0cdcae1a04e31a39337a480165ae8}{get\+Nutrients\+Per\+Leaf}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_accc3051607c58cfa560d3ce4a5e05dae}{get\+Max\+Fruits\+Number}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a282a65936cc98cdbd7d1e87ffd0e54b6}{get\+Fruits\+Number}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ac22517079b2f46b1767cb41878d9dc9a}{get\+Nutrients\+Per\+Fruit}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a1494ee48af11f0a7e005a2911e89394f}{spread}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja rozpszestrzeniająca rośliny na planszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a82834b58b25ba8ce9194005ea62f8354}{grow}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja realizująca rośnięcie roślin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_aa4ee706bb1b9ae42805901629a9063e6}{inc\+Leaves}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie liczby liści aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a7abf5fc805eaa1982fb367502de241b7}{inc\+Fruits}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie liczby owoców aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa implementująca drzewo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a5f49666805da5b237a9d19ade769d02c}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a5f49666805da5b237a9d19ade769d02c}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{Tree()}{Tree()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{Q\+PointF}]{position,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{get\+Kind = {\ttfamily Kind\+:\+:TREE} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a59d2a00b091b6420de262ee74f132da7}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a59d2a00b091b6420de262ee74f132da7}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!````~Tree@{$\sim$Tree}}
+\index{````~Tree@{$\sim$Tree}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{$\sim$Tree()}{~Tree()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::$\sim$\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a21b0fe3ed9bb4c0db55808aa53d9a297}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a21b0fe3ed9bb4c0db55808aa53d9a297}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!eatMe@{eatMe}}
+\index{eatMe@{eatMe}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{eatMe()}{eatMe()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::eat\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. 
+
+
+
+Implements \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_a0cb57abbae2d9f506b9e0d452f41cc00}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a282a65936cc98cdbd7d1e87ffd0e54b6}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a282a65936cc98cdbd7d1e87ffd0e54b6}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getFruitsNumber@{getFruitsNumber}}
+\index{getFruitsNumber@{getFruitsNumber}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getFruitsNumber()}{getFruitsNumber()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Fruits\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ad31c07255d0cd90ba94d4c87a715a610}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ad31c07255d0cd90ba94d4c87a715a610}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getLeavesNumber@{getLeavesNumber}}
+\index{getLeavesNumber@{getLeavesNumber}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getLeavesNumber()}{getLeavesNumber()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Leaves\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_accc3051607c58cfa560d3ce4a5e05dae}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_accc3051607c58cfa560d3ce4a5e05dae}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getMaxFruitsNumber@{getMaxFruitsNumber}}
+\index{getMaxFruitsNumber@{getMaxFruitsNumber}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getMaxFruitsNumber()}{getMaxFruitsNumber()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Max\+Fruits\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a07d5af7700daf01426cb2ab43f0e8267}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a07d5af7700daf01426cb2ab43f0e8267}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getMaxLeaves@{getMaxLeaves}}
+\index{getMaxLeaves@{getMaxLeaves}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getMaxLeaves()}{getMaxLeaves()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Max\+Leaves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ac22517079b2f46b1767cb41878d9dc9a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ac22517079b2f46b1767cb41878d9dc9a}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getNutrientsPerFruit@{getNutrientsPerFruit}}
+\index{getNutrientsPerFruit@{getNutrientsPerFruit}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getNutrientsPerFruit()}{getNutrientsPerFruit()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Nutrients\+Per\+Fruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a34b0cdcae1a04e31a39337a480165ae8}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a34b0cdcae1a04e31a39337a480165ae8}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!getNutrientsPerLeaf@{getNutrientsPerLeaf}}
+\index{getNutrientsPerLeaf@{getNutrientsPerLeaf}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{getNutrientsPerLeaf()}{getNutrientsPerLeaf()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::get\+Nutrients\+Per\+Leaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a82834b58b25ba8ce9194005ea62f8354}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a82834b58b25ba8ce9194005ea62f8354}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!grow@{grow}}
+\index{grow@{grow}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::grow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja realizująca rośnięcie roślin. 
+
+
+
+Implements \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_ac0579dd16f504c0f4a96a0c6447c4450}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a7abf5fc805eaa1982fb367502de241b7}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a7abf5fc805eaa1982fb367502de241b7}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!incFruits@{incFruits}}
+\index{incFruits@{incFruits}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{incFruits()}{incFruits()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::inc\+Fruits (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie liczby owoców aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_aa4ee706bb1b9ae42805901629a9063e6}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_aa4ee706bb1b9ae42805901629a9063e6}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!incLeaves@{incLeaves}}
+\index{incLeaves@{incLeaves}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{incLeaves()}{incLeaves()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::inc\+Leaves (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie liczby liści aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a1494ee48af11f0a7e005a2911e89394f}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_a1494ee48af11f0a7e005a2911e89394f}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!spread@{spread}}
+\index{spread@{spread}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{spread()}{spread()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::spread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja rozpszestrzeniająca rośliny na planszy. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_a060c8731d93dbeb8da37bbc03b862b2a}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ab546a15f94402b2397d38fc5ad7471ef}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_tree_ab546a15f94402b2397d38fc5ad7471ef}} 
+\index{WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::entities::Tree@{WDWE::logic::entities::Tree}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Tree\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Funkcja aktualizująca paramety roślin z każdym krokiem symulacji. Regeneruje życie, zarządza głodem, płodnością, rośnięciem. 
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_ae8324af5c1f2f3b92e1ffddf2da18980}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{tree_8h}{tree.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{tree_8cpp}{tree.\+cpp}}\end{DoxyCompactItemize}

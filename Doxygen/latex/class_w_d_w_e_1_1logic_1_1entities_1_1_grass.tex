@@ -1,0 +1,162 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass}{}\doxysection{W\+D\+WE\+::logic\+::entities\+::Grass Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass}\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+
+
+Klasa implementująca Trawę.  
+
+
+
+
+{\ttfamily \#include $<$grass.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::entities\+::Grass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_w_d_w_e_1_1logic_1_1entities_1_1_grass}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6b39a4c13782f24c8f182fade67a2228}{Grass}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, Q\+PointF position, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} kind=Kind\+::\+G\+R\+A\+SS)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_afadc69711ec175973362484a88e78c73}{$\sim$\+Grass}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a8c64e5ca6323c12a35c52c7c452fc827}{tick}} () override
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a7a2a6ad1e04315c9807c8cb45577fb3c}{eat\+Me}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_af1e8bdce1a5fd33b56b2189c18a2e7ec}{spread}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja rozpszestrzeniająca rośliny na planszy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aedc31916215653ac8114c9a0a11f331f}{grow}} () override
+\begin{DoxyCompactList}\small\item\em Funkcja realizująca rośnięcie roślin. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aaa4c6e9deb6c179872357dd3ec2db197}{get\+Lenght}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a27b9820c345cd1a04ef9a9d4a8d02269}{get\+Max\+Lenght}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6d8434d201662bc39a9feb785c8f6b1e}{get\+Nutrient\+Per\+Piece}} () const
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a4e0d6ee008a06790db360a47ba71ee6a}{inc\+Lenght}} (int value=1)
+\begin{DoxyCompactList}\small\item\em Zwiększanie długości rośliny aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa implementująca Trawę. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6b39a4c13782f24c8f182fade67a2228}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6b39a4c13782f24c8f182fade67a2228}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!Grass@{Grass}}
+\index{Grass@{Grass}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{Grass()}{Grass()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::\+Grass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{Q\+PointF}]{position,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{kind = {\ttfamily Kind\+:\+:GRASS} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_afadc69711ec175973362484a88e78c73}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_afadc69711ec175973362484a88e78c73}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!````~Grass@{$\sim$Grass}}
+\index{````~Grass@{$\sim$Grass}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{$\sim$Grass()}{~Grass()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::$\sim$\+Grass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a7a2a6ad1e04315c9807c8cb45577fb3c}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a7a2a6ad1e04315c9807c8cb45577fb3c}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!eatMe@{eatMe}}
+\index{eatMe@{eatMe}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{eatMe()}{eatMe()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::eat\+Me (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja reagująca na bycie zjadanym. Zwraca wartość odżywczą. 
+
+
+
+Implements \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_a0cb57abbae2d9f506b9e0d452f41cc00}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aaa4c6e9deb6c179872357dd3ec2db197}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aaa4c6e9deb6c179872357dd3ec2db197}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!getLenght@{getLenght}}
+\index{getLenght@{getLenght}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{getLenght()}{getLenght()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::get\+Lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a27b9820c345cd1a04ef9a9d4a8d02269}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a27b9820c345cd1a04ef9a9d4a8d02269}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!getMaxLenght@{getMaxLenght}}
+\index{getMaxLenght@{getMaxLenght}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{getMaxLenght()}{getMaxLenght()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::get\+Max\+Lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6d8434d201662bc39a9feb785c8f6b1e}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a6d8434d201662bc39a9feb785c8f6b1e}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!getNutrientPerPiece@{getNutrientPerPiece}}
+\index{getNutrientPerPiece@{getNutrientPerPiece}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{getNutrientPerPiece()}{getNutrientPerPiece()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::get\+Nutrient\+Per\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aedc31916215653ac8114c9a0a11f331f}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_aedc31916215653ac8114c9a0a11f331f}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!grow@{grow}}
+\index{grow@{grow}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::grow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja realizująca rośnięcie roślin. 
+
+
+
+Implements \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_ac0579dd16f504c0f4a96a0c6447c4450}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a4e0d6ee008a06790db360a47ba71ee6a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a4e0d6ee008a06790db360a47ba71ee6a}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!incLenght@{incLenght}}
+\index{incLenght@{incLenght}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{incLenght()}{incLenght()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::inc\+Lenght (\begin{DoxyParamCaption}\item[{int}]{value = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie długości rośliny aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_af1e8bdce1a5fd33b56b2189c18a2e7ec}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_af1e8bdce1a5fd33b56b2189c18a2e7ec}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!spread@{spread}}
+\index{spread@{spread}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{spread()}{spread()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::spread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja rozpszestrzeniająca rośliny na planszy. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_a060c8731d93dbeb8da37bbc03b862b2a}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a8c64e5ca6323c12a35c52c7c452fc827}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_grass_a8c64e5ca6323c12a35c52c7c452fc827}} 
+\index{WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::entities::Grass@{WDWE::logic::entities::Grass}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Grass\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Funkcja aktualizująca paramety roślin z każdym krokiem symulacji. Regeneruje życie, zarządza głodem, płodnością, rośnięciem. 
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_plant_ae8324af5c1f2f3b92e1ffddf2da18980}{W\+D\+W\+E\+::logic\+::entities\+::\+Plant}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alga_ab6500f8fa9b1e40881cb382b4e0b1ac9}{W\+D\+W\+E\+::logic\+::entities\+::\+Alga}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{grass_8h}{grass.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{grass_8cpp}{grass.\+cpp}}\end{DoxyCompactItemize}

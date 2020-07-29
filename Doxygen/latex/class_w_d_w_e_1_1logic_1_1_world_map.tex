@@ -1,0 +1,205 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1_world_map}{}\doxysection{W\+D\+WE\+::logic\+::World\+Map Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1_world_map}\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+
+
+{\ttfamily \#include $<$worldmap.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a54f638c1accc380b8423682e94fb7ef9}{World\+Map}} ()
+\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a29a2e43299356e840cff9b2cdc6e61ad}{$\sim$\+World\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_ab1a3c1161b9de7f9c55891cb1cc5425b}{tick}} ()
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a1bc61640545a2e7acbb9a34c2315aa0c}{entity\+At}} (int index)
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a814ef8cbf5d35398956ebfe6f08388e6}{entity\+Add}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$entity)
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a43e5e53dde6ee16b082753e10885e4f0}{entity\+Add}} (\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{entities\+::\+Kind}} kind, Q\+PointF position=Q\+PointF(0, 0))
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a92c3545682a00e9f59d24a80b67612ac}{entity\+Erase}} (int index)
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_ad7af5ee0f5f5ebe1cf538304517e8359}{entity\+Erase}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$entity)
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_abe669804d367bc201b0dc68634911157}{eat\+Me\+At}} (int index)
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a6e9c31c6bbc0e2c4561799276aca06b0}{is\+Alive\+At}} (int index) const
+\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{entities\+::\+Kind}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a9ed4bcc258a3e66c49fa9476eb6bed60}{kind\+At}} (int index) const
+\item 
+Q\+PointF \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a4b6f52ee08ededb2b8dcabb528c612c6}{position\+At}} (int index) const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a2819ecfd40daeab9b5cdf0bba0ac4ddf}{entity\+Number}} () const
+\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_aad32ae35a4d82346b1bb1122e1132bc0}{biome\+At\+Pixel}} (int x, int y) const
+\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a2ab5813a9ae607493abfdc4569dc222b}{biome\+At\+Pixel}} (Q\+PointF position) const
+\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_ac7be27fab9687c499728f5a560ceae38}{biome\+At\+Tile}} (int x, int y) const
+\item 
+\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a3e1636d600374ac2f1d2f01c51281d13}{biome\+At\+Tile}} (Q\+PointF position) const
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a22c6ee8a435e50ed399648017483dd53}{biome\+Change}} (\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} biome, int x, int y, bool tile=true)
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_ae678d59c804d30e86d7b46fefba722ef}{pixel\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a41cd4115db20685d261b993ffbace1ab}{pixel\+Height}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_ac6585f079583f1d26d2113e8fcbfebf8}{tile\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a8825b823e9f6a0185e01bd0b5fe5e04d}{tile\+Height}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map_a6203ccebd3774de4032196cd8a1a6fab}{tile\+Size}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a54f638c1accc380b8423682e94fb7ef9}\label{class_w_d_w_e_1_1logic_1_1_world_map_a54f638c1accc380b8423682e94fb7ef9}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!WorldMap@{WorldMap}}
+\index{WorldMap@{WorldMap}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{WorldMap()}{WorldMap()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::\+World\+Map\+::\+World\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a29a2e43299356e840cff9b2cdc6e61ad}\label{class_w_d_w_e_1_1logic_1_1_world_map_a29a2e43299356e840cff9b2cdc6e61ad}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!````~WorldMap@{$\sim$WorldMap}}
+\index{````~WorldMap@{$\sim$WorldMap}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{$\sim$WorldMap()}{~WorldMap()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::\+World\+Map\+::$\sim$\+World\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_aad32ae35a4d82346b1bb1122e1132bc0}\label{class_w_d_w_e_1_1logic_1_1_world_map_aad32ae35a4d82346b1bb1122e1132bc0}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!biomeAtPixel@{biomeAtPixel}}
+\index{biomeAtPixel@{biomeAtPixel}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{biomeAtPixel()}{biomeAtPixel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} W\+D\+W\+E\+::logic\+::\+World\+Map\+::biome\+At\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a2ab5813a9ae607493abfdc4569dc222b}\label{class_w_d_w_e_1_1logic_1_1_world_map_a2ab5813a9ae607493abfdc4569dc222b}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!biomeAtPixel@{biomeAtPixel}}
+\index{biomeAtPixel@{biomeAtPixel}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{biomeAtPixel()}{biomeAtPixel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} W\+D\+W\+E\+::logic\+::\+World\+Map\+::biome\+At\+Pixel (\begin{DoxyParamCaption}\item[{Q\+PointF}]{position }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_ac7be27fab9687c499728f5a560ceae38}\label{class_w_d_w_e_1_1logic_1_1_world_map_ac7be27fab9687c499728f5a560ceae38}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!biomeAtTile@{biomeAtTile}}
+\index{biomeAtTile@{biomeAtTile}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{biomeAtTile()}{biomeAtTile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} W\+D\+W\+E\+::logic\+::\+World\+Map\+::biome\+At\+Tile (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a3e1636d600374ac2f1d2f01c51281d13}\label{class_w_d_w_e_1_1logic_1_1_world_map_a3e1636d600374ac2f1d2f01c51281d13}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!biomeAtTile@{biomeAtTile}}
+\index{biomeAtTile@{biomeAtTile}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{biomeAtTile()}{biomeAtTile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}} W\+D\+W\+E\+::logic\+::\+World\+Map\+::biome\+At\+Tile (\begin{DoxyParamCaption}\item[{Q\+PointF}]{position }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a22c6ee8a435e50ed399648017483dd53}\label{class_w_d_w_e_1_1logic_1_1_world_map_a22c6ee8a435e50ed399648017483dd53}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!biomeChange@{biomeChange}}
+\index{biomeChange@{biomeChange}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{biomeChange()}{biomeChange()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::biome\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_a72008ce6bfe61f267e84d9a342cb47af}{Biome}}}]{biome,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{tile = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_abe669804d367bc201b0dc68634911157}\label{class_w_d_w_e_1_1logic_1_1_world_map_abe669804d367bc201b0dc68634911157}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!eatMeAt@{eatMeAt}}
+\index{eatMeAt@{eatMeAt}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{eatMeAt()}{eatMeAt()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::eat\+Me\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a814ef8cbf5d35398956ebfe6f08388e6}\label{class_w_d_w_e_1_1logic_1_1_world_map_a814ef8cbf5d35398956ebfe6f08388e6}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityAdd@{entityAdd}}
+\index{entityAdd@{entityAdd}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityAdd()}{entityAdd()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$}]{entity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a43e5e53dde6ee16b082753e10885e4f0}\label{class_w_d_w_e_1_1logic_1_1_world_map_a43e5e53dde6ee16b082753e10885e4f0}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityAdd@{entityAdd}}
+\index{entityAdd@{entityAdd}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityAdd()}{entityAdd()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{entities\+::\+Kind}}}]{kind,  }\item[{Q\+PointF}]{position = {\ttfamily QPointF(0,~0)} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a1bc61640545a2e7acbb9a34c2315aa0c}\label{class_w_d_w_e_1_1logic_1_1_world_map_a1bc61640545a2e7acbb9a34c2315aa0c}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityAt@{entityAt}}
+\index{entityAt@{entityAt}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityAt()}{entityAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$ W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_ad7af5ee0f5f5ebe1cf538304517e8359}\label{class_w_d_w_e_1_1logic_1_1_world_map_ad7af5ee0f5f5ebe1cf538304517e8359}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityErase@{entityErase}}
+\index{entityErase@{entityErase}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityErase()}{entityErase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{entities\+::\+Alive\+Entity}} $\ast$}]{entity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a92c3545682a00e9f59d24a80b67612ac}\label{class_w_d_w_e_1_1logic_1_1_world_map_a92c3545682a00e9f59d24a80b67612ac}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityErase@{entityErase}}
+\index{entityErase@{entityErase}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityErase()}{entityErase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+Erase (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a2819ecfd40daeab9b5cdf0bba0ac4ddf}\label{class_w_d_w_e_1_1logic_1_1_world_map_a2819ecfd40daeab9b5cdf0bba0ac4ddf}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!entityNumber@{entityNumber}}
+\index{entityNumber@{entityNumber}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{entityNumber()}{entityNumber()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::entity\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a6e9c31c6bbc0e2c4561799276aca06b0}\label{class_w_d_w_e_1_1logic_1_1_world_map_a6e9c31c6bbc0e2c4561799276aca06b0}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!isAliveAt@{isAliveAt}}
+\index{isAliveAt@{isAliveAt}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{isAliveAt()}{isAliveAt()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::\+World\+Map\+::is\+Alive\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a9ed4bcc258a3e66c49fa9476eb6bed60}\label{class_w_d_w_e_1_1logic_1_1_world_map_a9ed4bcc258a3e66c49fa9476eb6bed60}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!kindAt@{kindAt}}
+\index{kindAt@{kindAt}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{kindAt()}{kindAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{entities\+::\+Kind}} W\+D\+W\+E\+::logic\+::\+World\+Map\+::kind\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a41cd4115db20685d261b993ffbace1ab}\label{class_w_d_w_e_1_1logic_1_1_world_map_a41cd4115db20685d261b993ffbace1ab}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!pixelHeight@{pixelHeight}}
+\index{pixelHeight@{pixelHeight}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{pixelHeight()}{pixelHeight()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::pixel\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_ae678d59c804d30e86d7b46fefba722ef}\label{class_w_d_w_e_1_1logic_1_1_world_map_ae678d59c804d30e86d7b46fefba722ef}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!pixelWidth@{pixelWidth}}
+\index{pixelWidth@{pixelWidth}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{pixelWidth()}{pixelWidth()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::pixel\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a4b6f52ee08ededb2b8dcabb528c612c6}\label{class_w_d_w_e_1_1logic_1_1_world_map_a4b6f52ee08ededb2b8dcabb528c612c6}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!positionAt@{positionAt}}
+\index{positionAt@{positionAt}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{positionAt()}{positionAt()}}
+{\footnotesize\ttfamily Q\+PointF W\+D\+W\+E\+::logic\+::\+World\+Map\+::position\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_ab1a3c1161b9de7f9c55891cb1cc5425b}\label{class_w_d_w_e_1_1logic_1_1_world_map_ab1a3c1161b9de7f9c55891cb1cc5425b}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::\+World\+Map\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a8825b823e9f6a0185e01bd0b5fe5e04d}\label{class_w_d_w_e_1_1logic_1_1_world_map_a8825b823e9f6a0185e01bd0b5fe5e04d}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!tileHeight@{tileHeight}}
+\index{tileHeight@{tileHeight}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{tileHeight()}{tileHeight()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::tile\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_a6203ccebd3774de4032196cd8a1a6fab}\label{class_w_d_w_e_1_1logic_1_1_world_map_a6203ccebd3774de4032196cd8a1a6fab}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!tileSize@{tileSize}}
+\index{tileSize@{tileSize}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{tileSize()}{tileSize()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1_world_map_ac6585f079583f1d26d2113e8fcbfebf8}\label{class_w_d_w_e_1_1logic_1_1_world_map_ac6585f079583f1d26d2113e8fcbfebf8}} 
+\index{WDWE::logic::WorldMap@{WDWE::logic::WorldMap}!tileWidth@{tileWidth}}
+\index{tileWidth@{tileWidth}!WDWE::logic::WorldMap@{WDWE::logic::WorldMap}}
+\doxysubsubsection{\texorpdfstring{tileWidth()}{tileWidth()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::\+World\+Map\+::tile\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{worldmap_8h}{worldmap.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{worldmap_8cpp}{worldmap.\+cpp}}\end{DoxyCompactItemize}

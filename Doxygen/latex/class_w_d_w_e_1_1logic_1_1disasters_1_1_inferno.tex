@@ -1,0 +1,153 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno}{}\doxysection{W\+D\+WE\+::logic\+::disasters\+::Inferno Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno}\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+
+
+{\ttfamily \#include $<$inferno.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::disasters\+::Inferno\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ad74d7654d50ea63c242fb10398a0685c}{Inferno}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, int duration, int max\+\_\+size, float spread\+\_\+pace, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}} type=Type\+::\+I\+N\+F\+E\+R\+NO)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_aa934eafee911036943787070e70c1d9f}{$\sim$\+Inferno}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a5f5b0950385fe4eae53377a7d9e6c7af}{tick}} () override
+\begin{DoxyCompactList}\small\item\em Funckja aktualizująca parametry katastrofy za każdym krokiem symulacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+PointF \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ab7b7926ce5294f7925d5a699eea212f3}{get\+Center}} ()
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a4d5a7dd275d6729341011ef8c5007feb}{set\+Center}} (Q\+PointF new\+\_\+center)
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a745ddc09e8ca48b5153c76a7186688ab}{get\+Spread\+Pace}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a30c46c402e339b345c820b63e2de38f1}{get\+Size}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a9884aa118d836d7c987abb1ad86a4944}{get\+Max\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a1811a7cda0fc72ddd0043c7a2b4ba3a0}{destroy\+Soil}} ()
+\begin{DoxyCompactList}\small\item\em Zamiana gleby w piasek w obszarze pożaru. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a78675d9c9bb70e2f4e89023c7632f6a3}{kill\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Zabijanie istot w obszarze pożaru. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a0276f0fd033ef61042f47929a44c8504}{inc\+Size}} (float value)
+\begin{DoxyCompactList}\small\item\em Zwiększanie obszaru aż do osiągnięcia maksymalnej wartości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa implementująca Pożar -\/ stopniowo obszar wokół centrum jest zamieniany w piasek (wyjątkiem jest woda) oraz zabijane są istoty. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ad74d7654d50ea63c242fb10398a0685c}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ad74d7654d50ea63c242fb10398a0685c}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!Inferno@{Inferno}}
+\index{Inferno@{Inferno}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{Inferno()}{Inferno()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::\+Inferno (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{int}]{duration,  }\item[{int}]{max\+\_\+size,  }\item[{float}]{spread\+\_\+pace,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1disasters_a2f4b18a9bfdb038c0bf18dc68d1c4cd3}{Type}}}]{type = {\ttfamily Type\+:\+:INFERNO} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_aa934eafee911036943787070e70c1d9f}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_aa934eafee911036943787070e70c1d9f}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!````~Inferno@{$\sim$Inferno}}
+\index{````~Inferno@{$\sim$Inferno}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{$\sim$Inferno()}{~Inferno()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::$\sim$\+Inferno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a1811a7cda0fc72ddd0043c7a2b4ba3a0}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a1811a7cda0fc72ddd0043c7a2b4ba3a0}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!destroySoil@{destroySoil}}
+\index{destroySoil@{destroySoil}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{destroySoil()}{destroySoil()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::destroy\+Soil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zamiana gleby w piasek w obszarze pożaru. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ab7b7926ce5294f7925d5a699eea212f3}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_ab7b7926ce5294f7925d5a699eea212f3}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily Q\+PointF W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a9884aa118d836d7c987abb1ad86a4944}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a9884aa118d836d7c987abb1ad86a4944}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!getMaxSize@{getMaxSize}}
+\index{getMaxSize@{getMaxSize}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{getMaxSize()}{getMaxSize()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::get\+Max\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a30c46c402e339b345c820b63e2de38f1}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a30c46c402e339b345c820b63e2de38f1}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!getSize@{getSize}}
+\index{getSize@{getSize}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a745ddc09e8ca48b5153c76a7186688ab}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a745ddc09e8ca48b5153c76a7186688ab}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!getSpreadPace@{getSpreadPace}}
+\index{getSpreadPace@{getSpreadPace}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{getSpreadPace()}{getSpreadPace()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::get\+Spread\+Pace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a0276f0fd033ef61042f47929a44c8504}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a0276f0fd033ef61042f47929a44c8504}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!incSize@{incSize}}
+\index{incSize@{incSize}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{incSize()}{incSize()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::inc\+Size (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwiększanie obszaru aż do osiągnięcia maksymalnej wartości. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a78675d9c9bb70e2f4e89023c7632f6a3}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a78675d9c9bb70e2f4e89023c7632f6a3}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!killEntities@{killEntities}}
+\index{killEntities@{killEntities}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{killEntities()}{killEntities()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::kill\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zabijanie istot w obszarze pożaru. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a4d5a7dd275d6729341011ef8c5007feb}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a4d5a7dd275d6729341011ef8c5007feb}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::set\+Center (\begin{DoxyParamCaption}\item[{Q\+PointF}]{new\+\_\+center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a5f5b0950385fe4eae53377a7d9e6c7af}\label{class_w_d_w_e_1_1logic_1_1disasters_1_1_inferno_a5f5b0950385fe4eae53377a7d9e6c7af}} 
+\index{WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::disasters::Inferno@{WDWE::logic::disasters::Inferno}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::disasters\+::\+Inferno\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Funckja aktualizująca parametry katastrofy za każdym krokiem symulacji. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_disaster_a81d55978ab004feb06a562b45f1bbd3d}{W\+D\+W\+E\+::logic\+::disasters\+::\+Disaster}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1disasters_1_1_meteor_a4826fcf59a29e50abd0fdc89a372559d}{W\+D\+W\+E\+::logic\+::disasters\+::\+Meteor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{inferno_8h}{inferno.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{inferno_8cpp}{inferno.\+cpp}}\end{DoxyCompactItemize}

@@ -3,9 +3,9 @@
 
 namespace WDWE::logic::entities
 {
+//! Typ enumeratywny definiujący gatunki istot.
 enum Kind {
   INVALID = 0,
-
 
   AIRDINO,
   LANDDINO,

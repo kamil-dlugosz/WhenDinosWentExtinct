@@ -1,0 +1,310 @@
+\hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}{}\doxysection{W\+D\+WE\+::logic\+::entities\+::Dino Class Reference}
+\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+
+
+Abstrakcyjna klasa definiująca ogólny cechy dinozaura.  
+
+
+
+
+{\ttfamily \#include $<$dino.\+h$>$}
+
+Inheritance diagram for W\+D\+WE\+::logic\+::entities\+::Dino\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.758621cm]{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}{Sex}} \{ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5accc0377a8afbf50e7094f5c23a8af223}{Sex\+::\+I\+N\+V\+A\+L\+ID}} = 0, 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a797e877326f44c5763d1458d7f56d87a}{Sex\+::\+M\+A\+LE}}, 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a4bf2e31c60d6a605954e399524cae56b}{Sex\+::\+F\+E\+M\+A\+LE}}, 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a3af22b59f4641bc5501998297f9ac70d}{Sex\+::\+T\+O\+T\+AL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Typ enumeratywny definiujący płcie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a825a4839433d1b45550e66767d70d0f2}{Dino}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$world\+\_\+map, Q\+PointF position, \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_abad4e2391d34f06a8e912d1b5363d74c}{get\+Kind}})
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab62fa2617eb819bf3fa063bd304fa5a9}{$\sim$\+Dino}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5eb6ac367e659a8d80e524d19bb6a2b0}{tick}} () override
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}{Dino}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a1b7c386748f4881c3288a2bd0539ae93}{get\+Mate}} () const
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a72828821727cf6443364cfb402a710ee}{set\+Mate}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}{Dino}} $\ast$new\+\_\+mate)
+\item 
+virtual bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ac4b4232ec55ca13bfff74aeb7f4c8610}{is\+Ready\+To\+Mate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5e41bedd53b4b168c51b7e54de64632f}{set\+Diet}} (Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} $>$ new\+\_\+diet)
+\item 
+Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} $>$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4015d3e1efb5c9499b9223bb8c0ee41c}{get\+Diet}} ()
+\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab58678fa8e935317344e1fbbd59160d9}{is\+Starving}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy poziom najedzenia ma wartość 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a37a6e60f6fa788e0818138b5a97d075d}{is\+Hungry}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca true gry poziom najedzenia jest niski. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a2117b3bb1b8c8156f3473a7bd9f5f124}{is\+Fed}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy poziom najedzenia jest wysoki. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a85c28079a6a4520a33ce4703d8c5d62a}{is\+Yummy}} (\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} food) const
+\begin{DoxyCompactList}\small\item\em Zwraca true gdy food należy do diety dinozaura. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a28ca508ab351a8d4bd7294595df944ee}{get\+Hgh\+Saturation}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_afeb42330f9ea2c9ce7cea22ee1b78191}{get\+Low\+Saturation}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a879060a68fbc104a5dca432951b3d9e8}{get\+Min\+View\+Dist}} () const
+\item 
+int \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ad59397a760d6292a08f7b5c07d36fcf5}{get\+Max\+View\+Dist}} () const
+\item 
+\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}{Sex}} \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4339c7568a19c1b976c166a6c20e4391}{get\+Sex}} () const
+\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a11f4f0bf949163305d6f54995aea0afe}{find\+Food}} ()
+\item 
+virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$ \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab24d41df3d61fb8ec6197fa4fff0879e}{find\+Mate}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a14227bd2324f6aa0317b2b69bc3d5624}{eat}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$prey)
+\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a7c791ef569951b92783e9a9aafb181e6}{mating}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_affe68effbf825056e13b091dfd45f5bb}{pair}} (\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$target)=0
+\begin{DoxyCompactList}\small\item\em Funkcja łącząca dinozaury w parę. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a6158e88c49b9702c8a0019e27ac6d043}{unpair}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja rozłączająca parę. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a9e40f1efc57e10529c71ec56e9df5124}{move}} (Q\+PointF destination)
+\begin{DoxyCompactList}\small\item\em Funkcja zmieniająca położenie dinozaura w stronę celu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstrakcyjna klasa definiująca ogólny cechy dinozaura. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!Sex@{Sex}}
+\index{Sex@{Sex}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{Sex}{Sex}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}{W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::\+Sex}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Typ enumeratywny definiujący płcie. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!INVALID@{INVALID}}}\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5accc0377a8afbf50e7094f5c23a8af223}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5accc0377a8afbf50e7094f5c23a8af223}} 
+I\+N\+V\+A\+L\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MALE@{MALE}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!MALE@{MALE}}}\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a797e877326f44c5763d1458d7f56d87a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a797e877326f44c5763d1458d7f56d87a}} 
+M\+A\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FEMALE@{FEMALE}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!FEMALE@{FEMALE}}}\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a4bf2e31c60d6a605954e399524cae56b}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a4bf2e31c60d6a605954e399524cae56b}} 
+F\+E\+M\+A\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOTAL@{TOTAL}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!TOTAL@{TOTAL}}}\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a3af22b59f4641bc5501998297f9ac70d}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5a3af22b59f4641bc5501998297f9ac70d}} 
+T\+O\+T\+AL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a825a4839433d1b45550e66767d70d0f2}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a825a4839433d1b45550e66767d70d0f2}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!Dino@{Dino}}
+\index{Dino@{Dino}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{Dino()}{Dino()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::\+Dino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1_world_map}{World\+Map}} $\ast$}]{world\+\_\+map,  }\item[{Q\+PointF}]{position,  }\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{get\+Kind }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab62fa2617eb819bf3fa063bd304fa5a9}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab62fa2617eb819bf3fa063bd304fa5a9}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!````~Dino@{$\sim$Dino}}
+\index{````~Dino@{$\sim$Dino}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{$\sim$Dino()}{~Dino()}}
+{\footnotesize\ttfamily W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::$\sim$\+Dino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a14227bd2324f6aa0317b2b69bc3d5624}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a14227bd2324f6aa0317b2b69bc3d5624}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!eat@{eat}}
+\index{eat@{eat}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{eat()}{eat()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::eat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$}]{prey }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Funkcja próbująca zjeść obiekt znajdujący się pod wskaźnikiem. Próba może się nie udać np. gdy cel będzie za daleko lub ucieknie. \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a11f4f0bf949163305d6f54995aea0afe}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a11f4f0bf949163305d6f54995aea0afe}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!findFood@{findFood}}
+\index{findFood@{findFood}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{findFood()}{findFood()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$ W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::find\+Food (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Funkcja wyszukująca najbliższe jedzenie zgodne z dietą, a następnie zwracająca wskaźnik na ten obiekt jedzenia. \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab24d41df3d61fb8ec6197fa4fff0879e}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab24d41df3d61fb8ec6197fa4fff0879e}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!findMate@{findMate}}
+\index{findMate@{findMate}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{findMate()}{findMate()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}}$\ast$ W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::find\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Funkcja wyszukująca najbliższego partnera, zodpowiednim gatunkiem i płcią, a następnie zwracająca wskaźnik na ten obiekt dinozaura. \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4015d3e1efb5c9499b9223bb8c0ee41c}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4015d3e1efb5c9499b9223bb8c0ee41c}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getDiet@{getDiet}}
+\index{getDiet@{getDiet}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getDiet()}{getDiet()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} $>$ W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Diet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a28ca508ab351a8d4bd7294595df944ee}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a28ca508ab351a8d4bd7294595df944ee}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getHghSaturation@{getHghSaturation}}
+\index{getHghSaturation@{getHghSaturation}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getHghSaturation()}{getHghSaturation()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Hgh\+Saturation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_afeb42330f9ea2c9ce7cea22ee1b78191}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_afeb42330f9ea2c9ce7cea22ee1b78191}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getLowSaturation@{getLowSaturation}}
+\index{getLowSaturation@{getLowSaturation}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getLowSaturation()}{getLowSaturation()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Low\+Saturation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a1b7c386748f4881c3288a2bd0539ae93}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a1b7c386748f4881c3288a2bd0539ae93}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getMate@{getMate}}
+\index{getMate@{getMate}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getMate()}{getMate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}{Dino}} $\ast$ W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ad59397a760d6292a08f7b5c07d36fcf5}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ad59397a760d6292a08f7b5c07d36fcf5}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getMaxViewDist@{getMaxViewDist}}
+\index{getMaxViewDist@{getMaxViewDist}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getMaxViewDist()}{getMaxViewDist()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Max\+View\+Dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a879060a68fbc104a5dca432951b3d9e8}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a879060a68fbc104a5dca432951b3d9e8}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getMinViewDist@{getMinViewDist}}
+\index{getMinViewDist@{getMinViewDist}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getMinViewDist()}{getMinViewDist()}}
+{\footnotesize\ttfamily int W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Min\+View\+Dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4339c7568a19c1b976c166a6c20e4391}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a4339c7568a19c1b976c166a6c20e4391}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!getSex@{getSex}}
+\index{getSex@{getSex}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{getSex()}{getSex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ae8df1c9efa267d622451f8c15e3448d5}{Dino\+::\+Sex}} W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::get\+Sex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a2117b3bb1b8c8156f3473a7bd9f5f124}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a2117b3bb1b8c8156f3473a7bd9f5f124}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!isFed@{isFed}}
+\index{isFed@{isFed}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{isFed()}{isFed()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::is\+Fed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca true gdy poziom najedzenia jest wysoki. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a37a6e60f6fa788e0818138b5a97d075d}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a37a6e60f6fa788e0818138b5a97d075d}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!isHungry@{isHungry}}
+\index{isHungry@{isHungry}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{isHungry()}{isHungry()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::is\+Hungry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca true gry poziom najedzenia jest niski. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ac4b4232ec55ca13bfff74aeb7f4c8610}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ac4b4232ec55ca13bfff74aeb7f4c8610}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!isReadyToMate@{isReadyToMate}}
+\index{isReadyToMate@{isReadyToMate}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{isReadyToMate()}{isReadyToMate()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::is\+Ready\+To\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Zwraca true, gdy dinozaur jest gotowy do rozmnażania (najedzony, dorosły, ale nie stary, płodny itp.) \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab58678fa8e935317344e1fbbd59160d9}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_ab58678fa8e935317344e1fbbd59160d9}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!isStarving@{isStarving}}
+\index{isStarving@{isStarving}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{isStarving()}{isStarving()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::is\+Starving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca true gdy poziom najedzenia ma wartość 0. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a85c28079a6a4520a33ce4703d8c5d62a}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a85c28079a6a4520a33ce4703d8c5d62a}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!isYummy@{isYummy}}
+\index{isYummy@{isYummy}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{isYummy()}{isYummy()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::is\+Yummy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}}}]{food }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca true gdy food należy do diety dinozaura. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a7c791ef569951b92783e9a9aafb181e6}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a7c791ef569951b92783e9a9aafb181e6}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!mating@{mating}}
+\index{mating@{mating}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{mating()}{mating()}}
+{\footnotesize\ttfamily virtual void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::mating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Funkcja próbująca rozmnażać dinozaury. Próba może być nieudana gdy partner jest za daleko lub jest złego typu. Wyzerowuje płodność dinozaura. \mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a9e40f1efc57e10529c71ec56e9df5124}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a9e40f1efc57e10529c71ec56e9df5124}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!move@{move}}
+\index{move@{move}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily bool W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::move (\begin{DoxyParamCaption}\item[{Q\+PointF}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja zmieniająca położenie dinozaura w stronę celu. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_affe68effbf825056e13b091dfd45f5bb}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_affe68effbf825056e13b091dfd45f5bb}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!pair@{pair}}
+\index{pair@{pair}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{pair()}{pair()}}
+{\footnotesize\ttfamily virtual void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::pair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity}{Alive\+Entity}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Funkcja łącząca dinozaury w parę. 
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5e41bedd53b4b168c51b7e54de64632f}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5e41bedd53b4b168c51b7e54de64632f}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!setDiet@{setDiet}}
+\index{setDiet@{setDiet}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{setDiet()}{setDiet()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::set\+Diet (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{namespace_w_d_w_e_1_1logic_1_1entities_afead9798d46494ccf45888f57d10617c}{Kind}} $>$}]{new\+\_\+diet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a72828821727cf6443364cfb402a710ee}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a72828821727cf6443364cfb402a710ee}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!setMate@{setMate}}
+\index{setMate@{setMate}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{setMate()}{setMate()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::set\+Mate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_dino}{Dino}} $\ast$}]{new\+\_\+mate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5eb6ac367e659a8d80e524d19bb6a2b0}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a5eb6ac367e659a8d80e524d19bb6a2b0}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!tick@{tick}}
+\index{tick@{tick}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Funkcja aktualizująca paramety dinozaura z każdym krokiem symulacji. Regeneruje życie, zarządza głodem, płodnością, szukaniem jedzenia, partnerów itp. 
+
+Reimplemented from \mbox{\hyperlink{class_w_d_w_e_1_1logic_1_1entities_1_1_alive_entity_ab52306d583b36ee9f9d93e998eda5a42}{W\+D\+W\+E\+::logic\+::entities\+::\+Alive\+Entity}}.
+
+\mbox{\Hypertarget{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a6158e88c49b9702c8a0019e27ac6d043}\label{class_w_d_w_e_1_1logic_1_1entities_1_1_dino_a6158e88c49b9702c8a0019e27ac6d043}} 
+\index{WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}!unpair@{unpair}}
+\index{unpair@{unpair}!WDWE::logic::entities::Dino@{WDWE::logic::entities::Dino}}
+\doxysubsubsection{\texorpdfstring{unpair()}{unpair()}}
+{\footnotesize\ttfamily void W\+D\+W\+E\+::logic\+::entities\+::\+Dino\+::unpair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Funkcja rozłączająca parę. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{dino_8h}{dino.\+h}}\item 
+C\+:/\+Users/kamil/\+Documents/\+Qt Projects/\+When\+Dinos\+Went\+Extinct/\+Source/\mbox{\hyperlink{dino_8cpp}{dino.\+cpp}}\end{DoxyCompactItemize}
